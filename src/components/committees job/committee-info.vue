@@ -68,15 +68,12 @@ export default {
   },
 
   created() {
-    let arr = ["fr", "sm", "pr", "hr", "web", "campus", "multimedia"];
-
-    if (arr.includes(this.id)) {
-      fetch("/data.json")
-        .then((res) => res.json())
-        .then((res) => (this.committee = res["committees"][this.id]));
-    } else {
-      this.$router.push("/");
-    }
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.committee = res["committees"][this.id];
+        if (!this.committee) this.$router.push("/");
+      });
   },
   props: ["id"],
 };
