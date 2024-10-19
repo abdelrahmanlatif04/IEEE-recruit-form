@@ -7,14 +7,14 @@
   "committees": {
     "pr": {
       "name": "Public Relations",
-      "description": "The Public Relations Committee is responsible for creating, managing and implementing the PR strategy of our branch and maintaining a good image in their responsibilities.",
-      "Responsibilities": [
+      "description": "The Public Relations Committee is responsible for creating, managing and implementing the PR strategy of our branch and maintaining a good image in their responsibilities",
+      "responsibilities": [
         "The external communication and the dealing with (speakers, VIPs, media)",
         "Representing the branch in the offline campaigns (such as the booths)",
         "Building Relationships with different communities",
         "Making a wide network of Speakers, VIPs & foundations and building an updated database of them"
       ],
-      "Requirements": [
+      "requirements": [
         "Communication skills",
         "Presentation skills",
         "Negotiations skills",
@@ -24,13 +24,13 @@
     },
     "fr": {
       "name": "Fundraising Resources",
-      "description": "The Fundraising Committee develops and implements fundraising strategies and actions upon a planned framework of activities addressing multiple sources of funding in support of all branch activities.",
-      "Responsibilities": [
-        "Ensuring financial resources for our branch.",
-        "Analyzing and studying the market for any potential sponsor.",
-        "Work hand in hand with the treasurer to help achieve the branch’s financial plan."
+      "description": "The Fundraising Committee develops and implements fundraising strategies and actions upon a planned framework of activities addressing multiple sources of funding in support of all branch activities",
+      "responsibilities": [
+        "Ensuring financial resources for our branch",
+        "Analyzing and studying the market for any potential sponsor",
+        "Work hand in hand with the treasurer to help achieve the branch’s financial plan"
       ],
-      "Requirements": [
+      "requirements": [
         "Communication skills",
         "Persuasion skills",
         "Negotiations skills",
@@ -41,13 +41,13 @@
     "hr": {
       "name": "Human Resources",
       "description": "The Human Resources Committee is supposed to maintain a healthy environment for all volunteers within our branch and give a clear image of every volunteer to their heads and the ex-comm",
-      "Responsibilities": [
-        "Maintaining a healthy environment.",
-        "Handling volunteer complaints and resolving them.",
-        "Interviewing applicants and selecting suitable members.",
-        "Preparing detailed profiles of member contributions."
+      "responsibilities": [
+        "Maintaining a healthy environment",
+        "Handling volunteer complaints and resolving them",
+        "Interviewing applicants and selecting suitable members",
+        "Preparing detailed profiles of member contributions"
       ],
-      "Requirements": [
+      "requirements": [
         "Communication skills",
         "Proactivity",
         "Advising and coaching",
@@ -58,11 +58,11 @@
     "multimedia": {
       "name": "Multimedia",
       "description": "The Multimedia Committee is responsible for everything related to media and advertising like posters, photographs, videos, motion graphics, magazines’ designs...etc",
-      "Responsibilities": [
-        "Providing photography and video coverage for events.",
-        "Collaborating with the marketing committee to create social media designs and videos."
+      "responsibilities": [
+        "Providing photography and video coverage for events",
+        "Collaborating with the marketing committee to create social media designs and videos"
       ],
-      "Requirements": [
+      "requirements": [
         "Imagination and creativity",
         "Commitment",
         "Having a good grasp of the skills or software needed for his role:\na .Adobe Photoshop is a must for designers and Illustrator is a plus.\nb .Adobe premiere or any equivalent software for a video editor and Adobe after effects is a plus.\nc .Good eye and his gear for photographers and videographers"
@@ -70,13 +70,13 @@
     },
     "sm": {
       "name": "Social Media & Marketing",
-      "description": "The Social Media Committee is responsible for everything related to marketing and linking us with different media channels like Facebook, Twitter, LinkedIn ...etc.",
-      "Responsibilities": [
-        "Writing and publishing press releases across media channels.",
-        "Promoting news or events related to the branch.",
-        "Collaborating with the multimedia committee to create social media content."
+      "description": "The Social Media Committee is responsible for everything related to marketing and linking us with different media channels like Facebook, Twitter, LinkedIn ...etc",
+      "responsibilities": [
+        "Writing and publishing press releases across media channels",
+        "Promoting news or events related to the branch",
+        "Collaborating with the multimedia committee to create social media content"
       ],
-      "Requirements": [
+      "requirements": [
         "Communication skills",
         "Imagination and creativity",
         "Trend awareness",
@@ -85,23 +85,23 @@
     },
     "campus": {
       "name": "Campus",
-      "description": "Serves departments within the faculty and organizes competitions.",
-      "Responsibilities": [
+      "description": "Serves departments within the faculty and organizes competitions",
+      "responsibilities": [
         "Helping students",
         "Organizing technical competitions"
       ],
-      "Requirements": ["Communication skills", "Creativity", "Networking"]
+      "requirements": ["Communication skills", "Creativity", "Networking"]
     },
     "web": {
       "name": "Web Development",
       "description": "The Web Development Committee is responsible for launching, developing, and maintaining our website",
-      "Responsibilities": [
-        "Troubleshooting website problems.",
-        "Monitoring website traffic.",
-        "Staying up-to-date with technology.",
-        "Maintaining and updating the website."
+      "responsibilities": [
+        "Troubleshooting website problems",
+        "Monitoring website traffic",
+        "Staying up-to-date with technology",
+        "Maintaining and updating the website"
       ],
-      "Requirements": [
+      "requirements": [
         "Problem-solving skills",
         "Imagination and creativity",
         "Logical approach to work"
@@ -109,26 +109,26 @@
     }
   },
 
-  "social-media": {
-    "facebook": {
+  "social-media": [
+    {
       "title": "Facebook",
       "link": "https://facebook.com/IEEEAswanSB"
     },
-    "instagram": {
+    {
       "title": "Instagram",
       "link": "https://www.instagram.com/ieeeaswansb/"
     },
-    "linkedIn": {
+    {
       "title": "LinkedIn",
       "link": "https://www.linkedin.com/company/ieeeaswansb"
     },
-    "twitter": {
+    {
       "title": "Twitter",
       "link": "https://x.com/IEEEAswanSB"
     },
-    "website": {
+    {
       "title": "Website",
       "link": "https://ieee.aswu.edu.eg/"
     }
-  }
+  ]
 }

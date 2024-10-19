@@ -1,24 +1,14 @@
 <template>
-  <!-- <main-form />
-  <hr />
-  <committee-info />
-  <hr />
-  <team-info /> -->
-
-
-
   <RouterView></RouterView>
+  <contacts />
 </template>
 
 <script>
-import mainForm from "./components/form.vue";
-import committeeInfo from "./components/committee-info.vue";
-import teamInfo from "./components/team-info.vue";
+import contacts from "./components/contacts.vue";
+
 export default {
   components: {
-    mainForm,
-    committeeInfo,
-    teamInfo,
+    contacts,
   },
 };
 </script>

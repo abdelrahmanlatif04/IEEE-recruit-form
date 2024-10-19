@@ -39,6 +39,8 @@
           {{ com.name }}
         </option>
       </select>
+
+      <!-- router link to committees job description -->
     </div>
   </div>
 </template>

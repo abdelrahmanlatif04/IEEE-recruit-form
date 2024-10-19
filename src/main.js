@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 
 import { createRouter, createWebHistory } from "vue-router";
-
+// import { createPinia } from "pinia";
 import "./style.css";
 import App from "./App.vue";
 
@@ -15,7 +15,7 @@ const routes = [
     component: main,
   },
   {
-    path: "/team-info",
+    path: "/about-team",
     component: teamInfo,
   },
   {
@@ -23,9 +23,15 @@ const routes = [
     component: form,
   },
   {
-    path: "/committee/:committee",
+    path: "/committee/:id",
     component: committeeInfo,
     props: true,
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: {
+      path: "/",
+    },
   },
 ];
 
@@ -34,6 +40,9 @@ const router = createRouter({
   routes,
 });
 
+// const pinia = createPinia();
+
 const app = createApp(App);
 app.use(router);
+// app.use(pinia);
 app.mount("#app");

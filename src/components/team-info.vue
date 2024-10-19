@@ -1,9 +1,21 @@
-<template>
-    team info
-</template>
+<template>{{ data }}</template>
 
 <script>
-export default {};
+import { data } from "autoprefixer";
+
+export default {
+  data() {
+    return {
+      data: null,
+    };
+  },
+
+  created() {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((res) => (this.data = res["IEEE"]));
+  },
+};
 </script>
 
 <style></style>
