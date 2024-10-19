@@ -1,8 +1,11 @@
 <template>
-  <form class="flex flex-col gap-10" @submit.prevent="handleSubmit()">
-    <main-info />
-    <add-info />
-    <committee-info />
+  <form
+    class="bg-red-600 max-w-[500px] w-full mx-auto flex justify-center items-center h-screen px-2"
+    @submit.prevent="handleSubmit()"
+  >
+    <main-info v-if="state == 1" @move="state++" />
+    <add-info v-else-if="state == 2" @move="state++" />
+    <committee-info :committee="committee" v-else @submit="handleSubmit" />
   </form>
 </template>
 
@@ -12,7 +15,11 @@ import mainInfo from "./form/main-form.vue";
 import committeeInfo from "./form/committee-form.vue";
 export default {
   data() {
-    return {};
+    return {
+      state: 1,
+      data: [],
+      committee: null,
+    };
   },
 
   methods: {
@@ -27,5 +34,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

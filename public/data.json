@@ -20,6 +20,11 @@
         "Negotiations skills",
         "Good writing skills",
         "Preferable a good English"
+      ],
+
+      "questions": [
+        "If you gather data but then accidentally lose it, how do you react or respond to this situation?",
+        "Did you write emails in formal format? If yes, please drop a drive link that contains your writings 'Make sure to make this file access: Any one with that link'"
       ]
     },
     "fr": {
@@ -36,7 +41,8 @@
         "Negotiations skills",
         "Good network with people",
         "Good financial thinking"
-      ]
+      ],
+      "questions": ["How to reach out for a sponsorship?"]
     },
     "hr": {
       "name": "Human Resources",
@@ -53,7 +59,8 @@
         "Advising and coaching",
         "Coaching",
         "Teamwork"
-      ]
+      ],
+      "questions": ["What made you choose HR to apply for?"]
     },
     "multimedia": {
       "name": "Multimedia",
@@ -65,7 +72,11 @@
       "requirements": [
         "Imagination and creativity",
         "Commitment",
-        "Having a good grasp of the skills or software needed for his role:\na .Adobe Photoshop is a must for designers and Illustrator is a plus.\nb .Adobe premiere or any equivalent software for a video editor and Adobe after effects is a plus.\nc .Good eye and his gear for photographers and videographers"
+        "Having a good grasp of the skills or software needed for his role: i) Adobe Photoshop is a must for designers and Illustrator is a plus. ii)Adobe premiere or any equivalent software for a video editor and Adobe after effects is a plus. iii) Good eye and his gear for photographers and videographers"
+      ],
+      "questions": [
+        "Choose your Sub-Committee (Photography,Graphic design,Motion graphics or video editing)",
+        "provide a sample of your work or your portfolio"
       ]
     },
     "sm": {
@@ -81,6 +92,9 @@
         "Imagination and creativity",
         "Trend awareness",
         "Precision"
+      ],
+      "questions": [
+        "If you are going to write a post what are the steps you are going to take? (no experience is required to answer that question feel free to say what you are going to do )"
       ]
     },
     "campus": {
@@ -105,6 +119,11 @@
         "Problem-solving skills",
         "Imagination and creativity",
         "Logical approach to work"
+      ],
+      "questions": [
+        "Select your category (Frontend,Backend,UI&UX,Infrastructure,Full-stack)",
+        "provide a sample of your work or your portfolio",
+        "Provide your GitHub account username"
       ]
     }
   },

@@ -4,3 +4,13 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+
+@keyframes float {
+  50% {
+    /*scale or transform or both*/
+    /*translate:0 -20px ;*/
+    scale: 1.2;
+
+  }
+}

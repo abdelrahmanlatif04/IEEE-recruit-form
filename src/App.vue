@@ -1,6 +1,8 @@
 <template>
-  <RouterView></RouterView>
-  <contacts />
+  <div class="pb-12">
+    <RouterView></RouterView>
+    <contacts />
+  </div>
 </template>
 
 <script>

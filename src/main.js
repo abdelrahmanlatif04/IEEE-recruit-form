@@ -7,7 +7,8 @@ import App from "./App.vue";
 
 import main from "./components/main.vue";
 import teamInfo from "./components/team-info.vue";
-import committeeInfo from "./components/committee-info.vue";
+import committeesJob from "./components/committees-job.vue";
+import committeeInfo from "./components/committees job/committee-info.vue";
 import form from "./components/form.vue";
 const routes = [
   {
@@ -17,10 +18,17 @@ const routes = [
   {
     path: "/about-team",
     component: teamInfo,
+    name: "about team",
   },
   {
     path: "/register",
     component: form,
+    name: "register",
+  },
+  {
+    path: "/committees-job/",
+    component: committeesJob,
+    name: "committees info",
   },
   {
     path: "/committee/:id",

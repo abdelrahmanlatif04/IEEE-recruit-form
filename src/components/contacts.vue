@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex w-full justify-between shadow-black shadow-2xl bg-gray-200 px-2 py-1 absolute bottom-0 left-1/2 -translate-x-1/2"
+    class="flex w-full justify-between shadow-black shadow-2xl bg-gray-200 px-2 py-1 fixed bottom-0 left-1/2 -translate-x-1/2"
   >
     <a
       v-for="i in data"
@@ -10,10 +10,10 @@
       :href="i.link"
     >
       <img
-        class="w-5 object-contain"
+        class="w-7 p-1 object-contain"
         :src="'/' + i.title.toLowerCase() + '.png'"
       />
-      <p>{{ i.title }}</p>
+      <p class="hidden sm:block">{{ i.title }}</p>
     </a>
   </div>
 </template>
