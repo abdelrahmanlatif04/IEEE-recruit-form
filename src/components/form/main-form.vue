@@ -1,11 +1,7 @@
 <template>
   <div class="w-full flex flex-col items-center gap-5">
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="name"
-        >Name :
-      </label>
+      <label for="name">Name : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         type="text"
@@ -16,11 +12,7 @@
     </div>
 
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="email"
-        >Email :
-      </label>
+      <label for="email">Email : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         type="email"
@@ -31,11 +23,7 @@
     </div>
 
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="id"
-        >National ID :
-      </label>
+      <label for="id">National ID : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         type="number"
@@ -45,11 +33,7 @@
       />
     </div>
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="tel"
-        >Phone Number :
-      </label>
+      <label for="tel">Phone Number : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         type="tel"
@@ -59,11 +43,7 @@
       />
     </div>
     <div class="flex flex-col gap-3 w-full">
-      <label
-        for="uni"
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        >University :
-      </label>
+      <label for="uni">University : </label>
       <select
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name="uni"
@@ -84,11 +64,7 @@
     </div>
 
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="faculty"
-        >Faculty :
-      </label>
+      <label for="faculty">Faculty : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         type="text"
@@ -99,11 +75,7 @@
     </div>
 
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="year"
-        >Academic Year :
-      </label>
+      <label for="year">Academic Year : </label>
       <select
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name=""
@@ -144,5 +116,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

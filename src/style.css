@@ -1,16 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+@font-face {
+  font-family: "NokiaFont";
+  src: url("/fonts/nokia-s60v1-12px.ttf") format("truetype"),
+    url("/fonts/nokia-s60v1-12px-bold.ttf") format("truetype"),
+    url("/fonts/nokia-s60v1-title.ttf") format("truetype");
 }
 
+body {
+  font-family: "NokiaFont", sans-serif;
+}
 
 @keyframes float {
   50% {
     /*scale or transform or both*/
     /*translate:0 -20px ;*/
     scale: 1.2;
-
   }
 }

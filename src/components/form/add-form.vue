@@ -1,11 +1,7 @@
 <template>
   <div class="w-full flex flex-col items-center gap-5">
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="howDidUHear"
-        >How did you hear about us? :
-      </label>
+      <label for="howDidUHear">How did you hear about us? : </label>
       <select
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         v-model="howDidUHear"
@@ -26,11 +22,7 @@
     </div>
 
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="experience"
-        >Mention your previous experience :</label
-      >
+      <label for="experience">Mention your previous experience :</label>
       <textarea
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         id="experience"
@@ -40,9 +32,7 @@
     </div>
 
     <div class="flex flex-col gap-3 w-full">
-      <label
-        class="text-xl text-white font-semibold tracking-wide cursor-pointer"
-        for="committee"
+      <label for="committee"
         >Select the committee you would like to join :
       </label>
       <select
@@ -54,7 +44,11 @@
           {{ com.name }}
         </option>
       </select>
-      <!-- router link to committees job description -->
+      <router-link
+        to="/committees-job"
+        class="text-white tracking-wide font-semibold underline text-center text-lg underline-offset-1 hover:underline-offset-4 transition-all duration-300"
+        >See committees job description here</router-link
+      >
     </div>
 
     <button

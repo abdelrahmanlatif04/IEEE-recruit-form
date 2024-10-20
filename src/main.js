@@ -27,7 +27,7 @@ const routes = [
     name: "register",
   },
   {
-    path: "/committees-job/",
+    path: "/committees-job",
     component: committeesJob,
     name: "committees info",
   },

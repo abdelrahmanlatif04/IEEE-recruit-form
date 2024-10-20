@@ -1,6 +1,6 @@
 <template>
   <form
-    class="bg-red-600 max-w-[500px] w-full mx-auto flex justify-center items-center h-screen px-2"
+    class="bg-green-600 max-w-[500px] w-full mx-auto flex justify-center items-center h-screen px-2"
     @submit.prevent="handleSubmit()"
   >
     <main-info v-if="state == 1" @move="state++" />
@@ -34,3 +34,9 @@ export default {
   },
 };
 </script>
+
+<style>
+label {
+  @apply text-xl text-white font-semibold tracking-widest cursor-pointer ;
+}
+</style>

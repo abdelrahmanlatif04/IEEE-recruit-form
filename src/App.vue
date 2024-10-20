@@ -3,7 +3,6 @@
     <RouterView></RouterView>
     <contacts />
 
-    <!-- <float-bg /> -->
   </div>
 </template>
 
