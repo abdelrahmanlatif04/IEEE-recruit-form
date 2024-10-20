@@ -1,7 +1,11 @@
 {
   "IEEE": {
-    "main": {},
-    "aswan": {}
+    "main": [],
+    "aswan": [
+      "IEEE Is the first IEEE bracnch in upper egypt",
+      "Established in 10/11 season (14 yrs ago)",
+      "We’ve hosted remarkable events in Aswan such that"
+    ]
   },
 
   "committees": {

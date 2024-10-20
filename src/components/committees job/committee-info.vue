@@ -55,7 +55,11 @@
       </div>
     </div>
 
-    <router-link to="/" class="mx-auto">Main menu</router-link>
+    <router-link
+      class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      to="/"
+      >Main menu</router-link
+    >
   </div>
 </template>
 
