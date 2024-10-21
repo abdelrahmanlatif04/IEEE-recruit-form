@@ -20,6 +20,7 @@
         id="email"
         name="email"
         placeholder="AnaAslanWadMo4kela@hotmail.com"
+        v-model="email"
       />
     </div>
 
@@ -30,6 +31,7 @@
         type="number"
         id="id"
         name="id"
+        v-model="id"
         placeholder="12345678901234"
       />
     </div>
@@ -40,6 +42,7 @@
         type="tel"
         id="tel"
         name="tel"
+        v-model="tel"
         placeholder="+201234567890"
       />
     </div>
@@ -71,6 +74,7 @@
         type="text"
         id="faculty"
         name="faculty"
+        v-model="faculty"
         placeholder="كلية الشعب"
       />
     </div>
@@ -105,16 +109,48 @@ export default {
     return {
       name: null,
       email: null,
-      phoneNumber: null,
+      id: null,
+      tel: null,
       university: null,
       faculty: null,
       academicYear: null,
     };
   },
+
+  watch: {
+    name() {
+      useRegisterStore().user.name = this.name;
+    },
+    email() {
+      useRegisterStore().user.email = this.email;
+    },
+    id() {
+      useRegisterStore().user.id = this.id;
+    },
+    tel() {
+      useRegisterStore().user.tel = this.tel;
+    },
+    university() {
+      useRegisterStore().user.university = this.university;
+    },
+    faculty() {
+      useRegisterStore().user.faculty = this.faculty;
+    },
+    academicYear() {
+      useRegisterStore().user.academicYear = this.academicYear;
+    },
+  },
+  created() {
+    this.name = useRegisterStore().user.name;
+    this.email = useRegisterStore().user.email;
+    this.id = useRegisterStore().user.id;
+    this.tel = useRegisterStore().user.tel;
+    this.university = useRegisterStore().user.university;
+    this.faculty = useRegisterStore().user.faculty;
+    this.academicYear = useRegisterStore().user.academicYear;
+  },
   methods: {
     move() {
-      useRegisterStore().user.name = this.name;
-      console.log(useRegisterStore().user.name);
       this.$emit("move");
     },
   },

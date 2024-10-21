@@ -5,7 +5,8 @@ export const useRegisterStore = defineStore("register", {
     user: {
       name: null,
       email: null,
-      phoneNumber: null,
+      id:null,
+      tel: null,
       university: null,
       faculty: null,
       //   ***************

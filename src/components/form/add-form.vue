@@ -28,6 +28,7 @@
         id="experience"
         type="text"
         rows="1"
+        v-model="experience"
       />
     </div>
 
@@ -39,6 +40,7 @@
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name="committee"
         id="committee"
+        v-model="committee"
       >
         <option v-for="(com, i) in committees" :key="i" :value="i">
           {{ com.name }}
@@ -63,6 +65,8 @@
 </template>
 
 <script>
+import { useRegisterStore } from "../../stores/register";
+
 export default {
   methods: {
     move() {
@@ -77,6 +81,27 @@ export default {
       other: null,
       committees: null,
     };
+  },
+
+  created() {
+    this.howDidUHear = useRegisterStore().user.howDidUHear;
+    this.experience = useRegisterStore().user.experience;
+    this.committee = useRegisterStore().user.committee;
+    // this.other = useRegisterStore().user.
+  },
+  watch: {
+    howDidUHear(newValue) {
+      useRegisterStore().user.howDidUHear = newValue;
+    },
+    experience(newValue) {
+      useRegisterStore().user.experience = newValue;
+    },
+    committee(newValue) {
+      useRegisterStore().user.committee = newValue;
+    },
+    other(newValue) {
+      useRegisterStore().user.other = newValue;
+    },
   },
   created() {
     fetch("/data.json")
