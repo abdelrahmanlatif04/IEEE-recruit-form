@@ -8,6 +8,7 @@
         id="name"
         name="name"
         placeholder="Ahmed Hossam Mido"
+        v-model="name"
       />
     </div>
 
@@ -98,6 +99,7 @@
 </template>
 
 <script>
+import { useRegisterStore } from "../../stores/register";
 export default {
   data() {
     return {
@@ -111,6 +113,8 @@ export default {
   },
   methods: {
     move() {
+      useRegisterStore().user.name = this.name;
+      console.log(useRegisterStore().user.name);
       this.$emit("move");
     },
   },

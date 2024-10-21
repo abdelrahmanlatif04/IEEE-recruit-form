@@ -1,18 +1,28 @@
 <template>
   <div class="flex flex-col gap-5">
-    <img src="/logo.png" class="w-3/5 max-w-[400px] p-5 mx-auto" />
-    <div>
-      <h1 class="font-semibold text-2xl mb-2">About IEEE</h1>
-      <div>
-        <div v-for="i in general" :key="i">{{ i }}</div>
-      </div>
+    <img src="/logo.png" class="w-3/5 max-w-[300px] p-5 mx-auto hidden" />
+    <div class="m-4 flex flex-col gap-2">
+      <h1 class="font-bold text-2xl tracking-wider">About IEEE</h1>
+      <ul class="flex flex-col gap-2">
+        <li class="flex gap-1 text-lg" v-for="i in general" :key="i">
+          🔵
+          <p>
+            {{ i }}
+          </p>
+        </li>
+      </ul>
     </div>
 
-    <div>
-      <h1 class="font-semibold text-2xl mb-2">About IEEE AswanSB</h1>
-      <div>
-        <div v-for="i in team" :key="i">{{ i }}</div>
-      </div>
+    <div class="m-4 flex flex-col gap-2">
+      <h1 class="font-semibold text-2xl">About IEEE AswanSB</h1>
+      <ul class="flex flex-col gap-2">
+        <li class="flex gap-1 text-lg" v-for="i in team" :key="i">
+          🔵
+          <p>
+            {{ i }}
+          </p>
+        </li>
+      </ul>
     </div>
 
     <router-link

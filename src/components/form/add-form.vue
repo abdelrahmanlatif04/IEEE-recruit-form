@@ -46,6 +46,7 @@
       </select>
       <router-link
         to="/committees-job"
+        href="_blank"
         class="text-white tracking-wide font-semibold underline text-center text-lg underline-offset-1 hover:underline-offset-4 transition-all duration-300"
         >See committees job description here</router-link
       >

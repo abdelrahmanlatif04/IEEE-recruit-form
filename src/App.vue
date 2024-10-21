@@ -2,7 +2,7 @@
   <div class="pb-12">
     <RouterView></RouterView>
     <contacts />
-
+    <float-bg />
   </div>
 </template>
 

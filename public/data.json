@@ -1,10 +1,13 @@
 {
   "IEEE": {
-    "main": [],
+    "main": [
+      "IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity",
+      "IEEE and its members inspire a global community to innovate for a better tomorrow through its more than 400,000 members in more than 160 countries, and its highly cited publications, conferences, technology standards, and professional and educational activities. IEEE is the trusted “voice” for engineering, computing, and technology information around the globe"
+    ],
     "aswan": [
-      "IEEE Is the first IEEE bracnch in upper egypt",
-      "Established in 10/11 season (14 yrs ago)",
-      "We’ve hosted remarkable events in Aswan such that"
+      "IEEE Aswan Student Branch was founded in the academic year (2010-2011)",
+      "It is located at the Faculty of Engineering and serves all departments within the faculty, Electronics and Communications Engineering, Electrical Power Engineering, and Computer Engineering",
+      "but its services are not limited to these departments as it provides all students with different soft skills sessions and training"
     ]
   },
 
