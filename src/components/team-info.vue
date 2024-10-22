@@ -1,7 +1,10 @@
 <template>
-  <div class="flex flex-col gap-5 w-full" >
+  <div class="flex flex-col gap-5 w-full">
     <div>
-      <img src="/team.jpg" class="aspect-video object-cover max-w-[700px] pt-10 pb-2 px-10 mx-auto" />
+      <img
+        src="/team.jpg"
+        class="aspect-video object-cover max-w-[700px] pt-10 pb-2 px-10 mx-auto"
+      />
       <p class="text-center tracking-widest text-lg">
         *IEEE team from Be Informed camp 6*
       </p>
@@ -30,11 +33,19 @@
       </ul>
     </div>
 
-    <router-link
-      class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
-      to="/"
-      >Main menu</router-link
-    >
+    <div class="flex gap-2 justify-around mx-auto max-w-[400px] w-full">
+      <router-link
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 hover:bg-white font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        to="/"
+        >Main menu</router-link
+      >
+
+      <router-link
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 hover:bg-white font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        :to="{ name: 'register' }"
+        >Join us !</router-link
+      >
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-12">
+  <div class="pb-10">
     <RouterView></RouterView>
     <contacts />
     <float-bg />
@@ -17,5 +17,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
