@@ -27,7 +27,16 @@
         "Good writing skills",
         "Preferable a good English"
       ],
-      "questions": []
+      "questions": [
+        {
+          "state": "If you gather data but then accidentally lose it, how do you react or respond to this situation?",
+          "type": "text-area"
+        },
+        {
+          "state": "Did you write emails in formal format? If yes, please drop a drive link that contains your writings 'Make sure to make this file access: Any one with that link'",
+          "type": "text-area"
+        }
+      ]
     },
     "fr": {
       "name": "Fundraising Resources",
@@ -44,7 +53,9 @@
         "Good network with people",
         "Good financial thinking"
       ],
-      "questions": []
+      "questions": [
+        { "state": "How to reach out for a sponsorship?", "type": "text-area" }
+      ]
     },
     "hr": {
       "name": "Human Resources",
@@ -62,7 +73,12 @@
         "Coaching",
         "Teamwork"
       ],
-      "questions": []
+      "questions": [
+        {
+          "state": "What made you choose HR to apply for?",
+          "type": "text-area"
+        }
+      ]
     },
     "multimedia": {
       "name": "Multimedia",
@@ -76,7 +92,21 @@
         "Commitment",
         "Having a good grasp of the skills or software needed for his role: i) Adobe Photoshop is a must for designers and Illustrator is a plus. ii)Adobe premiere or any equivalent software for a video editor and Adobe after effects is a plus. iii) Good eye and his gear for photographers and videographers"
       ],
-      "questions": []
+      "questions": [
+        {
+          "state": "Choose your Sub-Committee",
+          "type": "check-box",
+          "choices": [
+            "Photography",
+            "Graphic design",
+            "Motion graphics & video editing"
+          ]
+        },
+        {
+          "state": "What are the softwares are you using?",
+          "type": "text-area"
+        }
+      ]
     },
     "sm": {
       "name": "Social Media & Marketing",
@@ -94,8 +124,8 @@
       ],
       "questions": [
         {
-          "q": "If you are going to write a post what are the steps you are going to take? (no experience is required to answer that question feel free to say what you are going to do )",
-          "type": "true"
+          "state": "If you are going to write a post what are the steps you are going to take? (no experience is required to answer that question feel free to say what you are going to do )",
+          "type": "text-area"
         }
       ]
     },
@@ -123,7 +153,23 @@
         "Imagination and creativity",
         "Logical approach to work"
       ],
-      "questions": []
+      "questions": [
+        {
+          "state": "Choose your Sub-Committee",
+          "type": "check-box",
+          "choices": [
+            "Front-end",
+            "Back-end",
+            "UI/UX",
+            "Full-stack",
+            "Infrastructure"
+          ]
+        },
+        {
+          "state": "Provide your GitHub account username",
+          "type": "text-area"
+        }
+      ]
     }
   },
 

@@ -5,12 +5,29 @@
       :key="question"
       class="flex flex-col gap-3 w-full"
     >
-      <label for="space">{{ question["q"] }}</label>
+      <label for="space">{{ question["state"] }}</label>
       <textarea
+        v-if="question['type'] == 'text-area'"
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name="space"
         id="space"
       ></textarea>
+      <div class="flex flex-col gap-2" v-else>
+        <div
+          class="flex gap-4 items-center pl-4"
+          v-for="i in question['choices']"
+          :key="i"
+        >
+          <input
+            class="w-6 h-6 text-blue-500 border-gray-300 rounded cursor-pointer"
+            type="checkbox"
+            name="question"
+            :value="i"
+          />
+
+          <label class="text-lg tracking-widest" :for="i">{{ i }}</label>
+        </div>
+      </div>
     </div>
     <div class="flex flex-col gap-3 w-full">
       <label for="space">More space : </label>

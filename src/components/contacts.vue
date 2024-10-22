@@ -13,7 +13,7 @@
         class="w-7 p-1 object-contain"
         :src="'/' + i.title.toLowerCase() + '.png'"
       />
-      <p class="hidden sm:block">{{ i.title }}</p>
+      <p class="hidden sm:block font-semibold tracking-widest">{{ i.title }}</p>
     </a>
   </div>
 </template>
