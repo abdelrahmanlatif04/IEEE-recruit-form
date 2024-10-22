@@ -29,11 +29,12 @@
 </template>
 
 <script>
+import { useRegisterStore } from "../../stores/register";
+
 export default {
   methods: {
     submit() {
-      console.log("asd");
-      this.$emit("submit");
+      useRegisterStore().submitForm();
     },
   },
 };

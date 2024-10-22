@@ -85,7 +85,7 @@
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name=""
         id="year"
-        v-model="university"
+        v-model="year"
       >
         <option value="prep">prep</option>
         <option v-for="n in 5" :value="n" :key="n">{{ n }}</option>
@@ -121,7 +121,7 @@ export default {
       tel: null,
       university: null,
       faculty: null,
-      academicYear: null,
+      year: null,
     };
   },
 
@@ -144,8 +144,8 @@ export default {
     faculty(newValue) {
       useRegisterStore().user.faculty = newValue;
     },
-    academicYear(newValue) {
-      useRegisterStore().user.academicYear = newValue;
+    year(newValue) {
+      useRegisterStore().user.year = newValue;
     },
   },
   mounted() {
@@ -155,7 +155,7 @@ export default {
     this.tel = useRegisterStore().user.tel;
     this.university = useRegisterStore().user.university;
     this.faculty = useRegisterStore().user.faculty;
-    this.academicYear = useRegisterStore().user.academicYear;
+    this.year = useRegisterStore().user.year;
   },
 };
 </script>

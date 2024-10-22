@@ -5,12 +5,12 @@ export const useRegisterStore = defineStore("register", {
     user: {
       name: null,
       email: null,
-      id:null,
+      id: null,
       tel: null,
       university: null,
       faculty: null,
       //   ***************
-      academicYear: null,
+      year: null,
       howDidUHear: null,
       experience: null,
       committee: null,
@@ -20,6 +20,8 @@ export const useRegisterStore = defineStore("register", {
     },
   }),
   actions: {
-    register() {},
+    submitForm() {
+      console.log(this.user);
+    },
   },
 });
