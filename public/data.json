@@ -16,10 +16,22 @@
       "name": "Public Relations",
       "description": "The Public Relations Committee is responsible for creating, managing and implementing the PR strategy of our branch and maintaining a good image in their responsibilities",
       "responsibilities": [
-        "The external communication and the dealing with (speakers, VIPs, media)",
-        "Representing the branch in the offline campaigns (such as the booths)",
-        "Building Relationships with different communities",
-        "Making a wide network of Speakers, VIPs & foundations and building an updated database of them"
+        {
+          "question": "The external communication and the dealing with (speakers, VIPs, media)",
+          "text-area": true
+        },
+        {
+          "question": "Representing the branch in the offline campaigns (such as the booths)",
+          "text-area": true
+        },
+        {
+          "question": "Representing the branch in the offline campaigns (such as the booths)",
+          "text-area": true
+        },
+        {
+          "question": "Making a wide network of Speakers, VIPs & foundations and building an updated database of them",
+          "text-area": true
+        }
       ],
       "requirements": [
         "Communication skills",
