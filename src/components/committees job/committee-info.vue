@@ -70,7 +70,7 @@
         >
         <router-link
           class="bg-blue-700 flex flex-col md:flex-row justify-center items-center text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] border-blue-700 transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
-          to="/"
+          to="/committees-job"
           >See other committees</router-link
         >
       </div>

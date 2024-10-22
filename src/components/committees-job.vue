@@ -3,14 +3,13 @@
     <div
       class="bg-blue-500 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-content-center"
     >
-      <router-link
-        class="text-center text-white py-1 my-5 font-semibold tracking-wide hover:tracking-widest transition-all duration-300"
-        :to="`/committee/${i}`"
+      <committee-link
         v-for="(committee, i, index) in committees"
-        :key="committee"
-      >
-        0{{ ++index }} {{ committee.name }}
-      </router-link>
+        :key="i"
+        :i="i"
+        :index="index"
+        :committee="committee"
+      />
     </div>
 
     <router-link
@@ -22,6 +21,9 @@
 </template>
 
 <script>
+import committeeInfo from "./committees job/committee-info.vue";
+import committeeLink from "./committees job/committee-link.vue";
+
 export default {
   data() {
     return {
@@ -35,6 +37,7 @@ export default {
       .then((res) => res.json())
       .then((res) => (this.committees = res["committees"]));
   },
+  components: { committeeInfo, committeeLink },
 };
 </script>
 
