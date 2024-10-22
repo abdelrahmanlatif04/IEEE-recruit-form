@@ -10,7 +10,6 @@
       "but its services are not limited to these departments as it provides all students with different soft skills sessions and training"
     ]
   },
-
   "committees": {
     "pr": {
       "name": "Public Relations",
@@ -28,16 +27,7 @@
         "Good writing skills",
         "Preferable a good English"
       ],
-      "questions": [
-        {
-          "q": "If you gather data but then accidentally lose it, how do you react or respond to this situation?",
-          "type": "true"
-        },
-        {
-          "q": "Did you write emails in formal format? If yes, please drop a drive link that contains your writings 'Make sure to make this file access: Any one with that link'",
-          "type": "true"
-        }
-      ]
+      "questions": []
     },
     "fr": {
       "name": "Fundraising Resources",
@@ -54,13 +44,7 @@
         "Good network with people",
         "Good financial thinking"
       ],
-
-      "questions": [
-        {
-          "q": "How to reach out for a sponsorship?",
-          "type": "false"
-        }
-      ]
+      "questions": []
     },
     "hr": {
       "name": "Human Resources",
@@ -78,7 +62,7 @@
         "Coaching",
         "Teamwork"
       ],
-      "questions": ["What made you choose HR to apply for?"]
+      "questions": []
     },
     "multimedia": {
       "name": "Multimedia",
@@ -92,17 +76,7 @@
         "Commitment",
         "Having a good grasp of the skills or software needed for his role: i) Adobe Photoshop is a must for designers and Illustrator is a plus. ii)Adobe premiere or any equivalent software for a video editor and Adobe after effects is a plus. iii) Good eye and his gear for photographers and videographers"
       ],
-
-      "questions": [
-        {
-          "q": "Choose your Sub-Committee (Photography,Graphic design,Motion graphics or video editing)",
-          "type": "true"
-        },
-        {
-          "q": "provide a sample of your work or your portfolio",
-          "type": "true"
-        }
-      ]
+      "questions": []
     },
     "sm": {
       "name": "Social Media & Marketing",
@@ -149,20 +123,7 @@
         "Imagination and creativity",
         "Logical approach to work"
       ],
-      "questions": [
-        {
-          "q": "Select your category (Frontend,Backend,UI&UX,Infrastructure,Full-stack)",
-          "type": "true"
-        },
-        {
-          "q": "provide a sample of your work or your portfolio",
-          "type": "true"
-        },
-        {
-          "q": "Provide your GitHub account username",
-          "type": "true"
-        }
-      ]
+      "questions": []
     }
   },
 
