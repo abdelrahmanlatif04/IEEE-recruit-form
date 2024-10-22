@@ -62,11 +62,18 @@
       >
         join {{ committee.name }} committee
       </button>
-      <router-link
-        class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
-        to="/"
-        >Main menu</router-link
-      >
+      <div class="flex">
+        <router-link
+          class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+          to="/"
+          >Main menu</router-link
+        >
+        <router-link
+          class="bg-blue-700 flex flex-col md:flex-row justify-center items-center text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] border-blue-700 transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
+          to="/"
+          >See other committees</router-link
+        >
+      </div>
     </div>
   </div>
 </template>

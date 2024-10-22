@@ -20,8 +20,14 @@ export const useRegisterStore = defineStore("register", {
     },
   }),
   actions: {
+    emptyUser() {
+      for (let i in this.user) {
+        this.user[i] = null;
+      }
+    },
     submitForm() {
       console.log(this.user);
+      this.emptyUser();
     },
   },
 });
