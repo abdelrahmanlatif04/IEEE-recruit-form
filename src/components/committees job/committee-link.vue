@@ -1,17 +1,14 @@
 <template>
-  <div class="flex flex-col items-center">
-    <img
-      src="https://placehold.co/1"
-      class="mx-auto w-1/2 mt-5 mb-2 max-w-96"
-    />
+  <li class="flex flex-col items-center w-[300px] p-2 border mx-2 bg-blue-600">
+    <img src="https://placehold.co/300x300" class="" />
     <router-link
       class="text-center text-white font-semibold tracking-wide hover:tracking-widest transition-all duration-300"
       :to="`/committee/${i}`"
       :key="committee"
     >
-      0{{ ++index }} {{ committee.name }}
+      0{{ index + 1 }} {{ committee.name }}
     </router-link>
-  </div>
+  </li>
 </template>
 
 <script>
