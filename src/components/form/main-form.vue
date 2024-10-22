@@ -92,13 +92,21 @@
       </select>
     </div>
 
-    <button
-      type="button"
-      @click="move()"
-      class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
-    >
-      Move to next section
-    </button>
+    <div class="flex flex-col justify-center items-center gap-2">
+      <button
+        type="button"
+        @click="this.$emit('forward')"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      >
+        Move to next section
+      </button>
+      <router-link
+        to="/"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      >
+        main menu
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -118,29 +126,29 @@ export default {
   },
 
   watch: {
-    name() {
-      useRegisterStore().user.name = this.name;
+    name(newValue) {
+      useRegisterStore().user.name = newValue;
     },
-    email() {
-      useRegisterStore().user.email = this.email;
+    email(newValue) {
+      useRegisterStore().user.email = newValue;
     },
-    id() {
-      useRegisterStore().user.id = this.id;
+    id(newValue) {
+      useRegisterStore().user.id = newValue;
     },
-    tel() {
-      useRegisterStore().user.tel = this.tel;
+    tel(newValue) {
+      useRegisterStore().user.tel = newValue;
     },
-    university() {
-      useRegisterStore().user.university = this.university;
+    university(newValue) {
+      useRegisterStore().user.university = newValue;
     },
-    faculty() {
-      useRegisterStore().user.faculty = this.faculty;
+    faculty(newValue) {
+      useRegisterStore().user.faculty = newValue;
     },
-    academicYear() {
-      useRegisterStore().user.academicYear = this.academicYear;
+    academicYear(newValue) {
+      useRegisterStore().user.academicYear = newValue;
     },
   },
-  created() {
+  mounted() {
     this.name = useRegisterStore().user.name;
     this.email = useRegisterStore().user.email;
     this.id = useRegisterStore().user.id;
@@ -148,11 +156,6 @@ export default {
     this.university = useRegisterStore().user.university;
     this.faculty = useRegisterStore().user.faculty;
     this.academicYear = useRegisterStore().user.academicYear;
-  },
-  methods: {
-    move() {
-      this.$emit("move");
-    },
   },
 };
 </script>

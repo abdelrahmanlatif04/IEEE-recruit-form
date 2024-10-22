@@ -9,13 +9,22 @@
       ></textarea>
     </div>
 
-    <button
-      type="button"
-      @click="submit"
-      class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
-    >
-      Move to next section
-    </button>
+    <div class="flex flex-col justify-center items-center gap-2">
+      <button
+        type="button"
+        @click="submit"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      >
+        Submit Form
+      </button>
+      <button
+        type="button"
+        @click="this.$emit('back')"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      >
+        back
+      </button>
+    </div>
   </div>
 </template>
 

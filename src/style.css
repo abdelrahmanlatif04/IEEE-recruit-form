@@ -29,6 +29,9 @@
 body {
   font-family: "NokiaFont", sans-serif;
 }
+.title-Font {
+  font-family: "NokiaTitleFont", sans-serif;
+}
 
 @keyframes float {
   50% {

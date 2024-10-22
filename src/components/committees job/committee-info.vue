@@ -55,22 +55,37 @@
       </div>
     </div>
 
-    <router-link
-      class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
-      to="/"
-      >Main menu</router-link
-    >
+    <div class="mx-auto flex flex-col gap-2">
+      <button
+        @click="chooseCommittee()"
+        class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] border-blue-700 transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
+      >
+        join {{ committee.name }} committee
+      </button>
+      <router-link
+        class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        to="/"
+        >Main menu</router-link
+      >
+    </div>
   </div>
 </template>
 
 <script>
+import { useRegisterStore } from "../../stores/register";
 export default {
   data() {
     return {
       committee: null,
     };
   },
-
+  methods: {
+    chooseCommittee() {
+      console.log("asd");
+      useRegisterStore().user.committee = this.id;
+      this.$router.push("/register");
+    },
+  },
   created() {
     fetch("/data.json")
       .then((res) => res.json())

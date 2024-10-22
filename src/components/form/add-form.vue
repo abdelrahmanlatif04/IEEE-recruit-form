@@ -54,13 +54,22 @@
       >
     </div>
 
-    <button
-      type="button"
-      @click="move()"
-      class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
-    >
-      Move to next section
-    </button>
+    <div class="flex flex-col justify-center items-center gap-2">
+      <button
+        type="button"
+        @click="this.$emit('forward')"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      >
+        Move to next section
+      </button>
+      <button
+        type="button"
+        @click="this.$emit('back')"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+      >
+        back
+      </button>
+    </div>
   </div>
 </template>
 
@@ -68,11 +77,6 @@
 import { useRegisterStore } from "../../stores/register";
 
 export default {
-  methods: {
-    move() {
-      this.$emit("move");
-    },
-  },
   data() {
     return {
       howDidUHear: null,
@@ -83,11 +87,10 @@ export default {
     };
   },
 
-  created() {
+  mounted() {
     this.howDidUHear = useRegisterStore().user.howDidUHear;
     this.experience = useRegisterStore().user.experience;
     this.committee = useRegisterStore().user.committee;
-    // this.other = useRegisterStore().user.
   },
   watch: {
     howDidUHear(newValue) {

@@ -1,6 +1,11 @@
 <template>
-  <div class="flex flex-col gap-5">
-    <img src="/logo.png" class="w-3/5 max-w-[300px] p-5 mx-auto hidden" />
+  <div class="flex flex-col gap-5 w-full" >
+    <div>
+      <img src="/team.jpg" class="aspect-video object-cover max-w-[700px] pt-10 pb-2 px-10 mx-auto" />
+      <p class="text-center tracking-widest text-lg">
+        *IEEE team from Be Informed camp 6*
+      </p>
+    </div>
     <div class="m-4 flex flex-col gap-2">
       <h1 class="font-bold text-2xl tracking-wider">About IEEE</h1>
       <ul class="flex flex-col gap-2">
