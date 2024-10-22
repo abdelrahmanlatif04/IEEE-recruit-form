@@ -1,5 +1,13 @@
 <template>
   <div class="w-full flex flex-col items-center gap-5">
+    <div v-for="question in questions" :key="question" class="flex flex-col gap-3 w-full">
+      <label for="space">{{question }}</label>
+      <textarea
+        class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
+        name="space"
+        id="space"
+      ></textarea>
+    </div>
     <div class="flex flex-col gap-3 w-full">
       <label for="space">More space : </label>
       <textarea
@@ -32,6 +40,19 @@
 import { useRegisterStore } from "../../stores/register";
 
 export default {
+  data() {
+    return {
+      questions: null,
+    };
+  },
+  created() {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.questions =
+          res["committees"][useRegisterStore().user.committee]["questions"];
+      });
+  },
   methods: {
     submit() {
       useRegisterStore().submitForm();
