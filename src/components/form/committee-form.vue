@@ -1,7 +1,11 @@
 <template>
   <div class="w-full flex flex-col items-center gap-5">
-    <div v-for="question in questions" :key="question" class="flex flex-col gap-3 w-full">
-      <label for="space">{{question }}</label>
+    <div
+      v-for="question in questions"
+      :key="question"
+      class="flex flex-col gap-3 w-full"
+    >
+      <label for="space">{{ question["q"] }}</label>
       <textarea
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name="space"

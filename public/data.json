@@ -16,22 +16,10 @@
       "name": "Public Relations",
       "description": "The Public Relations Committee is responsible for creating, managing and implementing the PR strategy of our branch and maintaining a good image in their responsibilities",
       "responsibilities": [
-        {
-          "question": "The external communication and the dealing with (speakers, VIPs, media)",
-          "text-area": true
-        },
-        {
-          "question": "Representing the branch in the offline campaigns (such as the booths)",
-          "text-area": true
-        },
-        {
-          "question": "Representing the branch in the offline campaigns (such as the booths)",
-          "text-area": true
-        },
-        {
-          "question": "Making a wide network of Speakers, VIPs & foundations and building an updated database of them",
-          "text-area": true
-        }
+        "The external communication and the dealing with (speakers, VIPs, media)",
+        "Representing the branch in the offline campaigns (such as the booths)",
+        "Building Relationships with different communities",
+        "Making a wide network of Speakers, VIPs & foundations and building an updated database of them"
       ],
       "requirements": [
         "Communication skills",
@@ -40,10 +28,15 @@
         "Good writing skills",
         "Preferable a good English"
       ],
-
       "questions": [
-        "If you gather data but then accidentally lose it, how do you react or respond to this situation?",
-        "Did you write emails in formal format? If yes, please drop a drive link that contains your writings 'Make sure to make this file access: Any one with that link'"
+        {
+          "q": "If you gather data but then accidentally lose it, how do you react or respond to this situation?",
+          "type": "true"
+        },
+        {
+          "q": "Did you write emails in formal format? If yes, please drop a drive link that contains your writings 'Make sure to make this file access: Any one with that link'",
+          "type": "true"
+        }
       ]
     },
     "fr": {
@@ -61,7 +54,13 @@
         "Good network with people",
         "Good financial thinking"
       ],
-      "questions": ["How to reach out for a sponsorship?"]
+
+      "questions": [
+        {
+          "q": "How to reach out for a sponsorship?",
+          "type": "false"
+        }
+      ]
     },
     "hr": {
       "name": "Human Resources",
@@ -93,9 +92,16 @@
         "Commitment",
         "Having a good grasp of the skills or software needed for his role: i) Adobe Photoshop is a must for designers and Illustrator is a plus. ii)Adobe premiere or any equivalent software for a video editor and Adobe after effects is a plus. iii) Good eye and his gear for photographers and videographers"
       ],
+
       "questions": [
-        "Choose your Sub-Committee (Photography,Graphic design,Motion graphics or video editing)",
-        "provide a sample of your work or your portfolio"
+        {
+          "q": "Choose your Sub-Committee (Photography,Graphic design,Motion graphics or video editing)",
+          "type": "true"
+        },
+        {
+          "q": "provide a sample of your work or your portfolio",
+          "type": "true"
+        }
       ]
     },
     "sm": {
@@ -113,7 +119,10 @@
         "Precision"
       ],
       "questions": [
-        "If you are going to write a post what are the steps you are going to take? (no experience is required to answer that question feel free to say what you are going to do )"
+        {
+          "q": "If you are going to write a post what are the steps you are going to take? (no experience is required to answer that question feel free to say what you are going to do )",
+          "type": "true"
+        }
       ]
     },
     "campus": {
@@ -123,7 +132,8 @@
         "Helping students",
         "Organizing technical competitions"
       ],
-      "requirements": ["Communication skills", "Creativity", "Networking"]
+      "requirements": ["Communication skills", "Creativity", "Networking"],
+      "questions": []
     },
     "web": {
       "name": "Web Development",
@@ -140,9 +150,18 @@
         "Logical approach to work"
       ],
       "questions": [
-        "Select your category (Frontend,Backend,UI&UX,Infrastructure,Full-stack)",
-        "provide a sample of your work or your portfolio",
-        "Provide your GitHub account username"
+        {
+          "q": "Select your category (Frontend,Backend,UI&UX,Infrastructure,Full-stack)",
+          "type": "true"
+        },
+        {
+          "q": "provide a sample of your work or your portfolio",
+          "type": "true"
+        },
+        {
+          "q": "Provide your GitHub account username",
+          "type": "true"
+        }
       ]
     }
   },
