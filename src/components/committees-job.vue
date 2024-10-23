@@ -2,35 +2,38 @@
   <div
     class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
-    <ul
-      class="flex transition-transform duration-300"
-      :style="{
-        transform:
-          currentSlide > 0
-            ? `translateX(-${currentSlide * 316}px)`
-            : `translateX(${-currentSlide * 316}px)`,
-      }"
-    >
-      <committee-link
-        v-for="(committee, i, index) in committees"
-        :key="i"
-        :i="i"
-        :index="index"
-        :committee="committee"
-        class="w-full flex-shrink-0"
-      />
-    </ul>
-    <div class="relative top-0 left-1/2">
-      <button class="left-0 z-10 p-2 bg-gray-500 text-white" @click="slideLeft">
-        Left
-      </button>
-      <button
-        class="right-0 z-10 p-2 bg-gray-500 text-white"
-        @click="slideRight"
+    <div class="mx-auto w-[316px] overflow-hidden relative">
+      <div
+        class="flex transition-transform duration-300"
+        :style="{
+          transform:
+            currentSlide > 0
+              ? `translateX(-${currentSlide * 316}px)`
+              : `translateX(${-currentSlide * 316}px)`,
+        }"
       >
-        Right
-      </button>
+        <committee-link
+          v-for="(committee, i, index) in committees"
+          :key="i"
+          :i="i"
+          :index="index"
+          :committee="committee"
+          class="w-full flex-shrink-0"
+        />
+      </div>
+
+      <div
+        class="flex mx-auto gap-3 justify-between w-full absolute z-10 top-1/2 -translate-y-1/2"
+      >
+        <button class="p-2 bg-gray-500 text-white" @click="slideLeft">
+          Left
+        </button>
+        <button class="p-2 bg-gray-500 text-white" @click="slideRight">
+          Right
+        </button>
+      </div>
     </div>
+
     <router-link
       class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       to="/"
@@ -52,18 +55,10 @@ export default {
   },
   methods: {
     slideLeft() {
-      if (this.currentSlide != -3) {
-        this.currentSlide--;
-        return;
-      }
-      this.currentSlide = 3;
+      this.currentSlide -= this.currentSlide ? 1 : 0;
     },
     slideRight() {
-      if (this.currentSlide != 3) {
-        this.currentSlide++;
-        return;
-      }
-      this.currentSlide = -3;
+      this.currentSlide += this.currentSlide < 6 ? 1 : 0;
     },
   },
   created() {
