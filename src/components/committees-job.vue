@@ -2,7 +2,7 @@
   <div
     class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
-    <div class="mx-auto w-[316px] overflow-hidden relative">
+    <div class="mx-auto w-[324px] overflow-hidden relative">
       <div
         class="flex transition-transform duration-300"
         :style="{
@@ -18,20 +18,22 @@
           :i="i"
           :index="index"
           :committee="committee"
-          class="w-full flex-shrink-0"
+          class="flex-shrink-0"
         />
       </div>
 
-      <div
-        class="flex mx-auto gap-3 justify-between w-full absolute z-10 top-1/2 -translate-y-1/2"
+      <button
+        class="p-2 absolute left-0 -translate-y-1/2 top-1/2 bg-gray-500 text-white h-2/5 w-8 hover:opacity-60 transition-all duration-300"
+        @click="slideLeft"
       >
-        <button class="p-2 bg-gray-500 text-white" @click="slideLeft">
-          Left
-        </button>
-        <button class="p-2 bg-gray-500 text-white" @click="slideRight">
-          Right
-        </button>
-      </div>
+        <img src="/arrow.png" class="invert rotate-180 w-5" />
+      </button>
+      <button
+        class="p-2 absolute right-0 -translate-y-1/2 top-1/2 bg-gray-500 text-white h-2/5 w-8 hover:opacity-60 transition-all duration-300"
+        @click="slideRight"
+      >
+        <img src="/arrow.png" class="invert w-5" />
+      </button>
     </div>
 
     <router-link
@@ -51,17 +53,36 @@ export default {
     return {
       committees: null,
       currentSlide: 0,
+      int: null,
     };
   },
+
   methods: {
     slideLeft() {
-      this.currentSlide -= this.currentSlide ? 1 : 0;
+      clearInterval(this.int);
+      if (this.currentSlide) {
+        this.currentSlide = 6;
+      } else {
+        this.currentSlide--;
+      }
     },
     slideRight() {
-      this.currentSlide += this.currentSlide < 6 ? 1 : 0;
+      clearInterval(this.int);
+      if (this.currentSlide == 6) {
+        this.currentSlide = 0;
+      } else {
+        this.currentSlide++;
+      }
     },
   },
   created() {
+    this.int = setInterval(() => {
+      if (this.currentSlide == 6) {
+        this.currentSlide = 0;
+      } else {
+        this.currentSlide++;
+      }
+    }, 2000);
     fetch("/data.json")
       .then((res) => res.json())
       .then((res) => (this.committees = res["committees"]));
