@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-5 w-full">
+  <div class="flex flex-col gap-5 w-full text-white">
     <div>
       <img
         src="/team.jpg"
