@@ -1,6 +1,6 @@
 <template>
   <form
-    class="max-w-[500px] w-full mx-auto flex justify-center items-center h-screen px-2 border shadow bg-gray-500"
+    class="max-w-[500px] w-full mx-auto flex justify-center items-center pt-4 min-h-screen px-2 border shadow bg-gray-500"
     @submit.prevent="handleSubmit()"
   >
     <main-info v-if="state == 1" @forward="state++" />

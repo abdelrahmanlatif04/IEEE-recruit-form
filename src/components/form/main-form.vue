@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex flex-col items-center gap-5">
-    <div class="flex flex-col gap-3 w-full">
+  <div class="w-full flex flex-col items-center">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="name">Name : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -10,9 +10,15 @@
         placeholder="Ahmed Hossam Mido"
         v-model="name"
       />
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.name"
+      >
+        Enter a valid name
+      </p>
     </div>
 
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="email">Email : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -22,9 +28,15 @@
         placeholder="AnaAslanWadMo4kela@hotmail.com"
         v-model="email"
       />
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.email"
+      >
+        Enter a valid Email
+      </p>
     </div>
 
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="id">National ID : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -34,8 +46,14 @@
         v-model="id"
         placeholder="12345678901234"
       />
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.id"
+      >
+        Enter a valid ID
+      </p>
     </div>
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="tel">Phone Number : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -45,8 +63,14 @@
         v-model="tel"
         placeholder="+201234567890"
       />
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.tel"
+      >
+        Enter a valid Number
+      </p>
     </div>
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="uni">University : </label>
       <select
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -59,9 +83,15 @@
         <option value="EELU">EELU</option>
         <option value="other">Other</option>
       </select>
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.university"
+      >
+        Enter a University
+      </p>
     </div>
 
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="faculty">Faculty : </label>
       <input
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -71,9 +101,15 @@
         v-model="faculty"
         placeholder="كلية الشعب"
       />
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.faculty"
+      >
+        Enter a valid Faculty
+      </p>
     </div>
 
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="year">Academic Year : </label>
       <select
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -84,12 +120,18 @@
         <option value="prep">prep</option>
         <option v-for="n in 5" :value="n" :key="n">{{ n }}</option>
       </select>
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.year"
+      >
+        Enter an Academic year
+      </p>
     </div>
 
     <div class="flex flex-col justify-center items-center gap-2">
       <button
         type="button"
-        @click="this.$emit('forward')"
+        @click="move"
         class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       >
         Move to next section
@@ -116,9 +158,49 @@ export default {
       university: null,
       faculty: null,
       year: null,
+
+      validation: {
+        name: true,
+        email: true,
+        id: true,
+        tel: true,
+        university: true,
+        faculty: true,
+        year: true,
+      },
     };
   },
+  computed: {
+    validate() {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const idRegex = /^[23]\d{13}$/;
+      const phoneRegex = /^(\+2011|011|\+2012|012|\+2010|010|\+2015|015)\d{8}$/;
 
+      this.validation.name = this.name ? true : false;
+      this.validation.email = emailRegex.test(this.email);
+      this.validation.id = idRegex.test(this.id);
+      this.validation.tel = phoneRegex.test(this.tel);
+      this.validation.university = this.university ? true : false;
+      this.validation.faculty = this.faculty ? true : false;
+      this.validation.year = this.year ? true : false;
+
+      for (let i in this.validation) {
+        if (!this.validation[i]) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          return false;
+        }
+      }
+
+      return true;
+    },
+  },
+  methods: {
+    move() {
+      if (this.validate) {
+        this.$emit("forward");
+      }
+    },
+  },
   watch: {
     name(newValue) {
       useRegisterStore().user.name = newValue;
