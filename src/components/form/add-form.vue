@@ -11,14 +11,6 @@
         <option value="event">Event</option>
         <option value="other">Other</option>
       </select>
-
-      <input
-        v-if="howDidUHear == 'other'"
-        v-model="other"
-        type="text"
-        placeholder="How did you hear about us? : "
-        required
-      />
     </div>
 
     <div class="flex flex-col gap-3 w-full">

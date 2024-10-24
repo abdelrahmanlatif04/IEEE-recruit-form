@@ -20,7 +20,7 @@
         >
           <input
             class="w-6 h-6 text-blue-500 border-gray-300 rounded cursor-pointer"
-            type="checkbox"
+            type="radio"
             name="question"
             :value="i"
           />
@@ -76,7 +76,9 @@ export default {
   },
   methods: {
     submit() {
-      useRegisterStore().submitForm();
+      // useRegisterStore().user.committeeAnswers = answers;
+      console.log(useRegisterStore().user.committeeAnswers);
+      // useRegisterStore().submitForm();
     },
   },
 };

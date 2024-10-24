@@ -59,12 +59,6 @@
         <option value="EELU">EELU</option>
         <option value="other">Other</option>
       </select>
-      <input
-        v-if="university == 'other'"
-        class="shadow-md focus:outline-none text-sm px-2 py-1 tracking-wider rounded-md w-4/5 mx-auto"
-        type="text"
-        placeholder="في حضن بابا و ماما"
-      />
     </div>
 
     <div class="flex flex-col gap-3 w-full">

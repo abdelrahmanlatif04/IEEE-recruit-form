@@ -2,7 +2,7 @@
   <div
     class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
-    <div class="mx-auto w-[324px] overflow-hidden relative">
+    <div class="mx-auto w-[316px] overflow-hidden relative">
       <div
         class="flex transition-transform duration-300"
         :style="{
@@ -61,10 +61,19 @@ export default {
     slideLeft() {
       clearInterval(this.int);
       if (this.currentSlide) {
-        this.currentSlide = 6;
-      } else {
         this.currentSlide--;
+      } else {
+        this.currentSlide = 6;
       }
+      setTimeout(() => {
+        this.int = setInterval(() => {
+          if (this.currentSlide == 6) {
+            this.currentSlide = 0;
+          } else {
+            this.currentSlide++;
+          }
+        }, 2000);
+      }, 4000);
     },
     slideRight() {
       clearInterval(this.int);
@@ -73,6 +82,15 @@ export default {
       } else {
         this.currentSlide++;
       }
+      setTimeout(() => {
+        this.int = setInterval(() => {
+          if (this.currentSlide == 6) {
+            this.currentSlide = 0;
+          } else {
+            this.currentSlide++;
+          }
+        }, 2000);
+      }, 4000);
     },
   },
   created() {
