@@ -18,6 +18,7 @@ export const useRegisterStore = defineStore("register", {
       committeeAnswers: null,
       space: null,
       // committee answers
+      createdAt: null,
     },
   }),
   actions: {
@@ -28,13 +29,10 @@ export const useRegisterStore = defineStore("register", {
     },
 
     submitForm() {
+      let date = new Date();
+
+      this.user.createdAt = date;
       console.log(this.user);
     },
-
-
-
-
-
-    
   },
 });
