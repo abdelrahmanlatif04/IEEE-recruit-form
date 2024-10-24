@@ -197,8 +197,7 @@ export default {
   },
   methods: {
     move() {
-      // if (this.validate)
-      
+      if (this.validate)
       this.$emit("forward");
     },
   },
