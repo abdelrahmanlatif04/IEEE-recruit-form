@@ -23,13 +23,13 @@
       </div>
 
       <button
-        class="p-2 absolute left-0 -translate-y-1/2 top-1/2 bg-gray-500 text-white h-2/5 w-8 hover:opacity-60 transition-all duration-300"
+        class="p-2 absolute rounded-l-xl bottom-0 bg-blue-800 border h-4/5 hover:opacity-40 transition-all duration-300"
         @click="slideLeft"
       >
         <img src="/arrow.png" class="invert rotate-180 w-5" />
       </button>
       <button
-        class="p-2 absolute right-0 -translate-y-1/2 top-1/2 bg-gray-500 text-white h-2/5 w-8 hover:opacity-60 transition-all duration-300"
+        class="p-2 absolute right-0 rounded-r-xl bottom-0 bg-blue-800 border h-4/5 hover:opacity-40 transition-all duration-300"
         @click="slideRight"
       >
         <img src="/arrow.png" class="invert w-5" />
@@ -65,15 +65,6 @@ export default {
       } else {
         this.currentSlide = 6;
       }
-      setTimeout(() => {
-        this.int = setInterval(() => {
-          if (this.currentSlide == 6) {
-            this.currentSlide = 0;
-          } else {
-            this.currentSlide++;
-          }
-        }, 2000);
-      }, 4000);
     },
     slideRight() {
       clearInterval(this.int);

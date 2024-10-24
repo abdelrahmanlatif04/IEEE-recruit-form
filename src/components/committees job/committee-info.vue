@@ -1,29 +1,25 @@
 <template>
-  <h1 class="text-center text-white font-bold tracking-wide text-2xl">
-    Committee job description
+  <h1 class="text-center pt-5 text-white font-bold tracking-wide text-2xl">
+    {{ committee.name }} job description
   </h1>
   <div class="flex flex-col gap-5 px-1 text-white">
     <img
       :src="`/committees/${id}.png`"
-      class="mx-auto w-1/2 mt-5 mb-2 max-w-96 invert"
+      class="mx-auto w-1/2 max-w-72 mt-5 mb-2 invert"
     />
 
-    <p class="text-center font-bold tracking-wide text-xl">
-      {{ committee.name }}
-    </p>
-
-    <p class="text-center">
+    <p class="text-center font-bold tracking-wide md:text-lg">
       {{ committee.description }}
     </p>
 
-    <div>
+    <div class="font-bold tracking-wide md:text-lg">
       <p
-        class="bg-blue-500 px-3 py-1 w-fit rounded-r-full font-semibold text-white tracking-wide"
+        class="bg-blue-500 px-3 py-1 w-fit mb-5 rounded-r-full font-semibold text-white tracking-wide"
       >
         Responsibilities :
       </p>
       <div
-        class="my-1 flex items-start gap-2"
+        class="my-4 flex items-start gap-2"
         v-for="(item, i) in committee.responsibilities"
         :key="i"
       >
@@ -34,7 +30,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="font-bold tracking-wide md:text-lg">
       <p
         class="bg-blue-500 px-3 py-1 w-fit rounded-r-full font-semibold text-white tracking-wide"
       >
@@ -42,7 +38,7 @@
       </p>
 
       <div
-        class="my-1 flex items-start gap-2"
+        class="my-4 flex items-start gap-2"
         v-for="(item, i) in committee.requirements"
         :key="i"
       >
