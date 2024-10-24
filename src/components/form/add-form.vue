@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col items-center gap-5">
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="howDidUHear">How did you hear about us? : </label>
       <select
         class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -11,9 +11,15 @@
         <option value="event">Event</option>
         <option value="other">Other</option>
       </select>
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.howDidUHear"
+      >
+        Enter a valid answer
+      </p>
     </div>
 
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="experience">Mention your previous experience :</label>
       <textarea
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
@@ -22,9 +28,15 @@
         rows="1"
         v-model="experience"
       />
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.experience"
+      >
+        Enter a valid answer
+      </p>
     </div>
 
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full pt-0 pb-7 relative">
       <label for="committee"
         >Select the committee you would like to join :
       </label>
@@ -38,6 +50,13 @@
           {{ com.name }}
         </option>
       </select>
+
+      <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+        v-if="!validation.committee"
+      >
+        Enter a valid answer
+      </p>
       <router-link
         to="/committees-job"
         href="_blank"
@@ -49,7 +68,7 @@
     <div class="flex flex-col justify-center items-center gap-2">
       <button
         type="button"
-        @click="this.$emit('forward')"
+        @click="move"
         class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       >
         Move to next section
@@ -74,9 +93,33 @@ export default {
       howDidUHear: null,
       experience: null,
       committee: null,
-      other: null,
       committees: null,
+      validation: {
+        howDidUHear: true,
+        experience: true,
+        committee: true,
+      },
     };
+  },
+  computed: {
+    validate() {
+      this.validation.howDidUHear = this.howDidUHear ? true : false;
+      this.validation.experience = this.experience ? true : false;
+      this.validation.committee = this.committee ? true : false;
+
+      for (let i in this.validation) {
+        if (!this.validation[i]) return false;
+      }
+
+      return true;
+    },
+  },
+
+  methods: {
+    move() {
+      if (this.validate)
+       this.$emit("forward");
+    },
   },
 
   mounted() {
@@ -93,9 +136,6 @@ export default {
     },
     committee(newValue) {
       useRegisterStore().user.committee = newValue;
-    },
-    other(newValue) {
-      useRegisterStore().user.other = newValue;
     },
   },
   created() {

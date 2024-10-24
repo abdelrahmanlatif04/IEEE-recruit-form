@@ -174,7 +174,8 @@ export default {
     validate() {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       const idRegex = /^[23]\d{13}$/;
-      const phoneRegex = /^(\+2011|011|\+2012|012|\+2010|010|\+2015|015)\d{8}$/;
+      const phoneRegex =
+        /^(\+2011|2011|011|\+2012|2012|012|\+2010|2010|010|\+2015|2015|015)\d{8}$/;
 
       this.validation.name = this.name ? true : false;
       this.validation.email = emailRegex.test(this.email);
@@ -196,9 +197,7 @@ export default {
   },
   methods: {
     move() {
-      if (this.validate) {
-        this.$emit("forward");
-      }
+      if (this.validate) this.$emit("forward");
     },
   },
   watch: {

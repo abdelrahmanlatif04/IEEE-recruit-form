@@ -1,11 +1,11 @@
 <template>
-  <h1 class="text-center font-bold tracking-wide text-2xl">
+  <h1 class="text-center text-white font-bold tracking-wide text-2xl">
     Committee job description
   </h1>
-  <div class="flex flex-col gap-5 px-1">
+  <div class="flex flex-col gap-5 px-1 text-white">
     <img
-      src="https://placehold.co/400x400"
-      class="mx-auto w-1/2 mt-5 mb-2 max-w-96"
+      :src="`/committees/${id}.png`"
+      class="mx-auto w-1/2 mt-5 mb-2 max-w-96 invert"
     />
 
     <p class="text-center font-bold tracking-wide text-xl">
@@ -58,18 +58,18 @@
     <div class="mx-auto flex flex-col gap-2">
       <button
         @click="chooseCommittee()"
-        class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] border-blue-700 transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
+        class="bg-blue-700 hover:bg-white border-white text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
       >
         join {{ committee.name }} committee
       </button>
       <div class="flex">
         <router-link
-          class="bg-blue-700 text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+          class="bg-blue-700 hover:bg-white border-white text-white mx-auto px-2 py-1 rounded-lg text-2xl border-[3px] transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
           to="/"
           >Main menu</router-link
         >
         <router-link
-          class="bg-blue-700 flex flex-col md:flex-row justify-center items-center text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] border-blue-700 transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
+          class="bg-blue-700 hover:bg-white border-white flex flex-col md:flex-row justify-center items-center text-white mx-auto px-2 py-1 rounded-lg text-lg border-[3px] border-blue-700 transition-all duration-300 font-semibold hover:bg-transparent hover:text-blue-700 hover:tracking-wide"
           to="/committees-job"
           >See other committees</router-link
         >

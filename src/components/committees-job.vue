@@ -82,15 +82,6 @@ export default {
       } else {
         this.currentSlide++;
       }
-      setTimeout(() => {
-        this.int = setInterval(() => {
-          if (this.currentSlide == 6) {
-            this.currentSlide = 0;
-          } else {
-            this.currentSlide++;
-          }
-        }, 2000);
-      }, 4000);
     },
   },
   created() {

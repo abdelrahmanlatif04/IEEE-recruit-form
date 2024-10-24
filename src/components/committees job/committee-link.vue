@@ -1,7 +1,7 @@
 <template>
-  <div class="w-[300px] p-2 rounded-lg mx-2 bg-blue-600">
+  <div class="w-[300px] p-2 rounded-lg mx-2">
     <router-link :to="`/committee/${i}`" :key="committee">
-      <img src="https://placehold.co/300x300" />
+      <img class="invert" :src="`committees/${i}.png`" />
       <p
         class="text-center text-white font-semibold tracking-wide hover:tracking-widest transition-all duration-300"
       >

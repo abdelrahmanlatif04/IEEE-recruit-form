@@ -96,8 +96,8 @@
       "questions": [
         {
           "state": "Choose your Sub-Committee",
-          "type": "check-box",
-          "choices": [
+          "type": "options",
+          "options": [
             "Photography",
             "Graphic design",
             "Motion graphics & video editing"
@@ -157,8 +157,8 @@
       "questions": [
         {
           "state": "Choose your Sub-Committee",
-          "type": "check-box",
-          "choices": [
+          "type": "options",
+          "options": [
             "Front-end",
             "Back-end",
             "UI/UX",

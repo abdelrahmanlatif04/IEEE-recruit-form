@@ -1,21 +1,38 @@
 <template>
   <div class="w-full flex flex-col items-center gap-5">
     <div
+      class="flex flex-col gap-3 w-full pt-0 pb-7 relative"
       v-for="question in questions"
       :key="question"
-      class="flex flex-col gap-3 w-full"
     >
-      <label for="space">{{ question["state"] }}</label>
+      <!-- <p
+        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
+      >
+        Enter a valid answer
+      </p> -->
+      <label :for="question['state']">{{ question["state"] }}</label>
+
       <textarea
         v-if="question['type'] == 'text-area'"
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
-        name="space"
-        id="space"
+        :name="question['state']"
+        :id="question['state']"
       ></textarea>
-      <div class="flex flex-col gap-2" v-else>
+
+      <select
+        class="cursor-pointer shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
+        v-model="opt"
+        v-else
+      >
+        <option :value="i" v-for="i in question['options']" :key="i">
+          {{ i }}
+        </option>
+      </select>
+
+      <div class="flex flex-col gap-2">
         <div
           class="flex gap-4 items-center pl-4"
-          v-for="i in question['choices']"
+          v-for="i in question['']"
           :key="i"
         >
           <input
@@ -29,15 +46,18 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col gap-3 w-full relative">
       <label for="space">More space : </label>
       <textarea
         class="shadow-md focus:outline-none text-lg px-2 py-1 tracking-wider rounded-md"
         name="space"
         id="space"
+        v-model="space"
       ></textarea>
     </div>
-
+    <p v-if="state" class="text-green-500 font-bold tracking-wider">
+      Form submitted successfully
+    </p>
     <div class="flex flex-col justify-center items-center gap-2">
       <button
         type="button"
@@ -64,7 +84,15 @@ export default {
   data() {
     return {
       questions: null,
+      space: null,
+      opt: null,
+      state: false,
     };
+  },
+  watch: {
+    space(newValue) {
+      useRegisterStore().user.space = newValue;
+    },
   },
   created() {
     fetch("/data.json")
@@ -75,10 +103,25 @@ export default {
       });
   },
   methods: {
+    isThereAnswer(i) {
+      return document.forms[0][i] ? true : false;
+    },
+    saveAnswers() {
+      let answers = {};
+      let c = 0;
+      for (let i = 0; i < this.questions.length; i++) {
+        answers[this.questions[i].state] =
+          !i && this.opt ? this.opt : document.forms[0][i].value;
+      }
+      useRegisterStore().user.committeeAnswers = answers;
+    },
     submit() {
-      // useRegisterStore().user.committeeAnswers = answers;
-      console.log(useRegisterStore().user.committeeAnswers);
-      // useRegisterStore().submitForm();
+      this.saveAnswers();
+      useRegisterStore().submitForm();
+      this.state = true;
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
     },
   },
 };

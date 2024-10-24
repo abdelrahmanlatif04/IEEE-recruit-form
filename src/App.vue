@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-10">
+  <div class="pb-10 bg-blue-800 min-h-screen">
     <RouterView></RouterView>
     <contacts />
     <float-bg />

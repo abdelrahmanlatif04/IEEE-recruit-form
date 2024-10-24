@@ -16,6 +16,7 @@ export const useRegisterStore = defineStore("register", {
       committee: null,
       //   ***************
       committeeAnswers: null,
+      space: null,
       // committee answers
     },
   }),
@@ -25,8 +26,15 @@ export const useRegisterStore = defineStore("register", {
         this.user[i] = null;
       }
     },
+
     submitForm() {
       console.log(this.user);
     },
+
+
+
+
+
+    
   },
 });
