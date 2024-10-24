@@ -132,13 +132,13 @@
       <button
         type="button"
         @click="move"
-        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white transition-all duration-300 font-semibold tracking-wide hover:bg-white hover:text-blue-700 hover:tracking-widest"
       >
         Move to next section
       </button>
       <router-link
         to="/"
-        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:bg-white hover:tracking-widest"
       >
         main menu
       </router-link>
@@ -197,7 +197,9 @@ export default {
   },
   methods: {
     move() {
-      if (this.validate) this.$emit("forward");
+      // if (this.validate)
+      
+      this.$emit("forward");
     },
   },
   watch: {

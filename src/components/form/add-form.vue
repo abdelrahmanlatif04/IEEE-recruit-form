@@ -59,7 +59,6 @@
       </p>
       <router-link
         to="/committees-job"
-        href="_blank"
         class="text-white tracking-wide font-semibold underline text-center text-lg underline-offset-1 hover:underline-offset-4 transition-all duration-300"
         >See committees job description here</router-link
       >
@@ -69,14 +68,14 @@
       <button
         type="button"
         @click="move"
-        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white hover:bg-white transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       >
         Move to next section
       </button>
       <button
         type="button"
         @click="this.$emit('back')"
-        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white hover:bg-white transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       >
         back
       </button>
@@ -117,8 +116,8 @@ export default {
 
   methods: {
     move() {
-      if (this.validate)
-       this.$emit("forward");
+      // if (this.validate)
+      this.$emit("forward");
     },
   },
 

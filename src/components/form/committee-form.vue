@@ -5,11 +5,6 @@
       v-for="question in questions"
       :key="question"
     >
-      <!-- <p
-        class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
-      >
-        Enter a valid answer
-      </p> -->
       <label :for="question['state']">{{ question["state"] }}</label>
 
       <textarea
@@ -62,14 +57,14 @@
       <button
         type="button"
         @click="submit"
-        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white hover:bg-white transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       >
         Submit Form
       </button>
       <button
         type="button"
         @click="this.$emit('back')"
-        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-[3px] border-blue-700 transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
+        class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white hover:bg-white transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
       >
         back
       </button>
