@@ -8,7 +8,7 @@ export const useRegisterStore = defineStore("register", {
       id: null,
       tel: null,
       university: null,
-      subUni: null,
+      otherUni: null,
       faculty: null,
 
       year: null,

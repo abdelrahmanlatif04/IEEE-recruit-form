@@ -231,8 +231,8 @@ export default {
     university(newValue) {
       useRegisterStore().user.university = newValue;
     },
-    subUni(newValue) {
-      useRegisterStore().user.subUni = newValue;
+    otherUni(newValue) {
+      useRegisterStore().user.otherUni = newValue;
     },
     faculty(newValue) {
       useRegisterStore().user.faculty = newValue;
@@ -247,6 +247,7 @@ export default {
     this.id = useRegisterStore().user.id;
     this.tel = useRegisterStore().user.tel;
     this.university = useRegisterStore().user.university;
+    this.otherUni = useRegisterStore().user.otherUni;
     this.faculty = useRegisterStore().user.faculty;
     this.year = useRegisterStore().user.year;
   },
