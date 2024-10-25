@@ -8,6 +8,7 @@ export const useRegisterStore = defineStore("register", {
       id: null,
       tel: null,
       university: null,
+      subUni: null,
       faculty: null,
 
       year: null,
@@ -17,7 +18,7 @@ export const useRegisterStore = defineStore("register", {
 
       committeeAnswers: null,
       space: null,
-      
+
       createdAt: null,
     },
   }),
@@ -30,7 +31,6 @@ export const useRegisterStore = defineStore("register", {
 
     submitForm() {
       let date = new Date();
-
       this.user.createdAt = date;
       console.log(this.user);
     },

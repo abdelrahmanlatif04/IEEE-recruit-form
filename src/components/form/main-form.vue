@@ -231,6 +231,9 @@ export default {
     university(newValue) {
       useRegisterStore().user.university = newValue;
     },
+    subUni(newValue) {
+      useRegisterStore().user.subUni = newValue;
+    },
     faculty(newValue) {
       useRegisterStore().user.faculty = newValue;
     },
