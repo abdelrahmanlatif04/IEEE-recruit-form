@@ -18,11 +18,10 @@
           :i="i"
           :index="index"
           :committee="committee"
-          class="flex-shrink-0"
         />
       </div>
 
-      <button
+      <button 
         class="p-2 absolute rounded-l-xl bottom-0 bg-blue-800 border h-4/5 hover:opacity-40 transition-all duration-300"
         @click="slideLeft"
       >

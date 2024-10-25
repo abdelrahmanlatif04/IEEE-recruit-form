@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[300px] p-2 rounded-lg mx-2 hover:opacity-60 transition-all duration-300"
+    class="w-[300px] p-2 rounded-lg mx-2 flex-shrink-0 hover:opacity-60 transition-all duration-300"
   >
     <router-link :to="`/committee/${i}`" :key="committee">
       <img class="invert p-14" :src="`committees/${i}.png`" />
