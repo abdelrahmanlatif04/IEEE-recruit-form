@@ -9,15 +9,15 @@ export const useRegisterStore = defineStore("register", {
       tel: null,
       university: null,
       faculty: null,
-      //   ***************
+
       year: null,
       howDidUHear: null,
       experience: null,
       committee: null,
-      //   ***************
+
       committeeAnswers: null,
       space: null,
-      // committee answers
+      
       createdAt: null,
     },
   }),

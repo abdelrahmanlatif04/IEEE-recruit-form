@@ -83,6 +83,14 @@
         <option value="EELU">EELU</option>
         <option value="other">Other</option>
       </select>
+      <input
+        class="shadow-md focus:outline-none text-lg px-2 py-px tracking-wide rounded-md w-11/12 mx-auto"
+        type="text"
+        placeholder="في حضن بابا و ماما"
+        v-if="university == 'other'"
+        v-model="otherUni"
+      />
+
       <p
         class="text-red-500 absolute right-0 bottom-0 font-semibold w-full tracking-widest text-center"
         v-if="!validation.university"
@@ -158,6 +166,7 @@ export default {
       university: null,
       faculty: null,
       year: null,
+      otherUni: null,
 
       validation: {
         name: true,
@@ -181,7 +190,13 @@ export default {
       this.validation.email = emailRegex.test(this.email);
       this.validation.id = idRegex.test(this.id);
       this.validation.tel = phoneRegex.test(this.tel);
-      this.validation.university = this.university ? true : false;
+      if (this.university == "other") {
+        this.validation.university = this.otherUni ? true : false;
+      } else if (this.university) {
+        this.validation.university = this.university ? true : false;
+      } else {
+        this.validation.university = false;
+      }
       this.validation.faculty = this.faculty ? true : false;
       this.validation.year = this.year ? true : false;
 
@@ -197,8 +212,7 @@ export default {
   },
   methods: {
     move() {
-      if (this.validate)
-      this.$emit("forward");
+      if (this.validate) this.$emit("forward");
     },
   },
   watch: {
