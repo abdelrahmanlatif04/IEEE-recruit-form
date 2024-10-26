@@ -59,10 +59,14 @@
           v-for="(answer, question, index) in i.committeeAnswers"
           :key="question"
         >
-          <p>
-            0<span class="font-bold tracking-wide">{{ index }}</span
-            >-{{ question }} :{{ answer }}
-          </p>
+          <div>
+            <p class="font-bold tracking-wide">
+              {{ index + 1 }} {{ question }}
+            </p>
+            <p>
+              {{ answer }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
