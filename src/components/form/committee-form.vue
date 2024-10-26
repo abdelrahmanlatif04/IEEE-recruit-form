@@ -138,12 +138,13 @@ export default {
         .then((response) => {
           console.log(response.data);
           this.msg = response.data.message;
-          console.log(this.msg);
+          setTimeout(() => {
+            location.reload();
+          }, 2500);
         })
         .catch((error) => {
           console.error(error);
           this.msg = error.response.data.message;
-          console.log(this.msg);
         });
     },
   },
