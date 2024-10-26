@@ -35,13 +35,15 @@ export default {
   },
 
   created() {
-    this.password = localStorage.getItem("password");
-    this.submit();
+    if (localStorage.getItem("password").length > 2) {
+      this.password = localStorage.getItem("password");
+      this.submit();
+    }
   },
   methods: {
     submit() {
       if (this.password == "IeeE@ppliCants!V1ew#2024") {
-        localStorage.setItem("password",this.password)
+        localStorage.setItem("password", this.password);
         this.$emit("openCommittee");
       } else {
         this.state = "Wrong password";
