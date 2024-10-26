@@ -7,7 +7,7 @@
 
     <div v-else-if="!committee">
       <p class="text-center text-white text-2xl font-bold">
-        NO. applicants : {{ applicants }}
+        NO. applicants : {{ applicants.length }}
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <button
@@ -67,31 +67,7 @@ export default {
           return response.json();
         })
         .then((data) => {
-          this.applicants = data;
-        })
-        .catch((error) => {
-          console.error("There was a problem with the fetch operation:", error);
-        });
-    },
-    getCommitteeApplicants(committee) {
-      const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
-      const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${committee}`;
-
-      fetch(url, {
-        method: "GET",
-        headers: {
-          "x-api-key": apiKey,
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
+          this.applicants = data["applicaitons"];
         })
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
