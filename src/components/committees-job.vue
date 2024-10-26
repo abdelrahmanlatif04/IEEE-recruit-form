@@ -55,7 +55,7 @@ export default {
       committees: null,
       currentSlide: 0,
       int: null,
-      width: 400,
+      width: 350,
     };
   },
   created() {
