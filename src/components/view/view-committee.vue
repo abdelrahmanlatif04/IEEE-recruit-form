@@ -11,7 +11,8 @@ export default {
   mounted() {
     axios
       .get(
-        "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
+        "https://ieee-recruitment-production.up.railway.app/api/v1/boody" +
+          this.committee,
         {
           headers: {
             "x-api-key": "your_MangaMan_APIKEY_Wherever_You_Keep_It",
