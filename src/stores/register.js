@@ -45,14 +45,10 @@ export const useRegisterStore = defineStore("register", {
           }
         )
         .then((response) => {
-          console.log(response.data);
-          this.msg = response.data.message;
-          console.log(this.msg);
+          return response.data.message;
         })
         .catch((error) => {
-          console.error(error);
-          this.msg = error.response.data.message;
-          console.log(this.msg);
+          return error.response.data.message;
         });
     },
   },
