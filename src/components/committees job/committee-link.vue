@@ -1,10 +1,17 @@
 <template>
   <div
-    class="w-[300px] p-2 rounded-lg mx-2 flex-shrink-0 hover:opacity-60 transition-all duration-300"
+    class="w-[300px] bg-cover bg-no-repeat rounded-lg mx-2 flex-shrink-0 hover:opacity-60 transition-all duration-300"
   >
-    <router-link :to="`/committee/${i}`" :key="committee">
-      <img class="invert p-14" :src="`committees/${i}.png`" />
-      <p class="text-center text-white font-semibold tracking-wide">
+    <router-link
+      :to="`/committee/${i}`"
+      :key="committee"
+      class="flex flex-col h-full justify-between p-2 gap-10"
+    >
+      <img
+        :src="`committees/${i}.png`"
+        class="w-4/12 mx-auto aspect-square object-contain"
+      />
+      <p class="text-center text-[#00246d] font-semibold tracking-wide">
         0{{ index + 1 }} {{ committee.name }}
       </p>
     </router-link>

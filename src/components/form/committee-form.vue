@@ -114,9 +114,9 @@ export default {
       this.saveAnswers();
       useRegisterStore().submitForm();
       this.state = true;
-      setTimeout(() => {
-        location.reload();
-      }, 3000);
+      // setTimeout(() => {
+      //   location.reload();
+      // }, 3000);
     },
   },
 };

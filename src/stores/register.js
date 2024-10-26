@@ -32,7 +32,17 @@ export const useRegisterStore = defineStore("register", {
     submitForm() {
       let date = new Date();
       this.user.createdAt = date;
-      console.log(this.user);
+
+      fetch("https://ieee-recruitment-production.up.railway.app/api/v1/boody", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(this.user),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
     },
   },
 });

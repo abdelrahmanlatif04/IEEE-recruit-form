@@ -2,7 +2,9 @@
   <div
     class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
-    <div class="mx-auto w-[316px] overflow-hidden relative">
+    <div
+      class="mx-auto w-[316px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative"
+    >
       <div
         class="flex transition-transform duration-300"
         :style="{
@@ -21,14 +23,14 @@
         />
       </div>
 
-      <button 
-        class="p-2 absolute rounded-l-xl bottom-0 bg-blue-800 border h-4/5 hover:opacity-40 transition-all duration-300"
+      <button
+        class="p-2 absolute rounded-l-xl bottom-0 h-full hover:opacity-40 transition-all duration-300"
         @click="slideLeft"
       >
         <img src="/arrow.png" class="invert rotate-180 w-5" />
       </button>
       <button
-        class="p-2 absolute right-0 rounded-r-xl bottom-0 bg-blue-800 border h-4/5 hover:opacity-40 transition-all duration-300"
+        class="p-2 absolute right-0 rounded-r-xl bottom-0 h-full hover:opacity-40 transition-all duration-300"
         @click="slideRight"
       >
         <img src="/arrow.png" class="invert w-5" />
