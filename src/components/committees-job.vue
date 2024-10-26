@@ -3,7 +3,7 @@
     class="flex flex-col gap-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
     <div
-      :class="`shadow flex w-[400px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative`"
+      :class="`shadow flex w-[400px] aspect-video bg-[url('/bg.jpg')] rounded-lg overflow-hidden relative`"
     >
       <div
         class="flex transition-transform h-full duration-300"
