@@ -51,7 +51,6 @@
       ></textarea>
     </div>
     <p
-      v-if="state"
       class="font-bold tracking-wider"
       :class="
         msg == 'Application submitted successfully'
