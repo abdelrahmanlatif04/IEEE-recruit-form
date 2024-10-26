@@ -1,0 +1,105 @@
+<template>
+  <div>
+    <view-password
+      v-if="!authorized"
+      @openCommittee="authorized = !authorized"
+    />
+
+    <div
+      v-else-if="!committee"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
+    >
+      <button
+        class="text-[#00246d] border bg-blue-300 flex flex-col gap-2 items-center"
+        v-for="(com, i) in committees"
+        :key="com"
+        @click="$router.push('/view/' + i)"
+      >
+        <img
+          :src="'/committees/' + i + '.png'"
+          class="w-1/2 aspect-square object-contain mx-auto"
+        />
+        <p>
+          {{ com.name }}
+        </p>
+      </button>
+    </div>
+    <view-committee :committee="committee"  v-else />
+  </div>
+</template>
+
+<script>
+import viewPassword from "./view/viewPassword.vue";
+import viewCommittee from "./view/view-committee.vue";
+export default {
+  data() {
+    return {
+      authorized: false,
+      committees: null,
+    };
+  },
+  created() {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((res) => (this.committees = res["committees"]));
+  },
+  methods: {
+    getAllApplicants() {
+      const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
+      const url =
+        "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
+
+      fetch(url, {
+        method: "GET",
+        headers: {
+          "x-api-key": apiKey,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    },
+    getCommitteeApplicants(committee) {
+      const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
+      const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${committee}`;
+
+      fetch(url, {
+        method: "GET",
+        headers: {
+          "x-api-key": apiKey,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    },
+  },
+  components: {
+    viewPassword,
+    viewCommittee,
+  },
+  props: ["committee"],
+};
+</script>
+
+<style></style>

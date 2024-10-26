@@ -9,6 +9,7 @@ import main from "./components/main.vue";
 import teamInfo from "./components/team-info.vue";
 import committeesJob from "./components/committees-job.vue";
 import committeeInfo from "./components/committees job/committee-info.vue";
+import viewApplicants from "./components/view-applicants.vue";
 import form from "./components/form.vue";
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/committees-job",
     component: committeesJob,
     name: "committees info",
+  },
+  {
+    path: "/view/:committee?",
+    component: viewApplicants,
+    props: true,
   },
   {
     path: "/committee/:id",
