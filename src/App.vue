@@ -11,7 +11,6 @@ import contacts from "./components/contacts.vue";
 export default {
   components: {
     contacts,
-    floatBg,
   },
 };
 </script>
