@@ -5,7 +5,7 @@
   <div class="flex flex-col gap-5 px-1 text-white">
     <img
       :src="`/committees/${id}.png`"
-      class="mx-auto w-1/2 max-w-72 mt-5 mb-2 invert"
+      class="mx-auto w-1/2 max-w-72 mt-5 mb-2"
     />
 
     <p class="text-center font-bold tracking-wide md:text-lg">

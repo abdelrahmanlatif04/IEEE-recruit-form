@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`rounded-lg w-[400px] flex-shrink-0 hover:opacity-60 transition-all duration-300`"
+    :class="`rounded-lg w-[${width}px] flex-shrink-0 hover:opacity-60 transition-all duration-300`"
   >
     <router-link
       :to="`/committee/${i}`"

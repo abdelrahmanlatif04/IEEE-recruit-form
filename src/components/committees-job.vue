@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    class="flex flex-col gap-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
     <div
       :class="`shadow flex w-[${width}px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative`"
