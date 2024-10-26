@@ -67,7 +67,7 @@
     </div>
 
     <button
-      class="bg-blue-900 border-[3px] border-blue-900 text-white px-2 py-1 rounded-lg hover:bg-white hover:text-blue-900 tracking-wide hover:tracking-widest transition-all duration-300 fixed right-2 bottom-2"
+      class="bg-blue-900 border-[3px] border-blue-900 text-white px-2 py-1 rounded-lg hover:bg-white hover:text-blue-900 tracking-wide hover:tracking-widest transition-all duration-300 fixed right-2 bottom-12 z-10"
     >
       Main menu
     </button>

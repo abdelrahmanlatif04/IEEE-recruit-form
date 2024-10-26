@@ -2,13 +2,11 @@
   <div class="pb-10 bg-blue-800 min-h-screen">
     <RouterView></RouterView>
     <contacts />
-    <float-bg />
   </div>
 </template>
 
 <script>
 import contacts from "./components/contacts.vue";
-import floatBg from "./components/float-bg.vue";
 
 export default {
   components: {
