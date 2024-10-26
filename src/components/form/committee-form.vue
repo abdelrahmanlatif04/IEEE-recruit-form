@@ -50,8 +50,16 @@
         v-model="space"
       ></textarea>
     </div>
-    <p v-if="state" class="text-green-500 font-bold tracking-wider">
-      Form submitted successfully
+    <p
+      v-if="state"
+      class="font-bold tracking-wider"
+      :class="
+        msg == 'Application submitted successfully'
+          ? 'text-green-500'
+          : 'text-red-500'
+      "
+    >
+      {{ msg }}
     </p>
     <div class="flex flex-col justify-center items-center gap-2">
       <button
@@ -81,7 +89,7 @@ export default {
       questions: null,
       space: null,
       opt: null,
-      state: false,
+      msg: null,
     };
   },
   watch: {
@@ -113,10 +121,7 @@ export default {
     submit() {
       this.saveAnswers();
       useRegisterStore().submitForm();
-      this.state = true;
-      // setTimeout(() => {
-      //   location.reload();
-      // }, 3000);
+      this.msg = useRegisterStore().msg;
     },
   },
 };

@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 export const useRegisterStore = defineStore("register", {
   state: () => ({
+    msg: null,
     user: {
       name: null,
       email: null,
@@ -32,7 +33,7 @@ export const useRegisterStore = defineStore("register", {
     submitForm() {
       let date = new Date();
       this.user.createdAt = date;
-      axios 
+      axios
         .post(
           "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
           this.user,
@@ -44,10 +45,10 @@ export const useRegisterStore = defineStore("register", {
           }
         )
         .then((response) => {
-          console.log(response.data);
+          this.msg = response.message;
         })
         .catch((error) => {
-          console.error("Error:", error);
+          this.msg = error;
         });
     },
   },
