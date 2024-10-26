@@ -46,11 +46,13 @@ export const useRegisterStore = defineStore("register", {
         )
         .then((response) => {
           console.log(response.data);
-          this.msg = response.message;
+          this.msg = response.data.message;
+          console.log(this.msg);
         })
         .catch((error) => {
           console.error(error);
-          this.msg = error;
+          this.msg = error.response.data.message;
+          console.log(this.msg);
         });
     },
   },
