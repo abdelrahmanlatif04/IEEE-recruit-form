@@ -1,18 +1,15 @@
 <template>
-  <p class="text-center text-white text-2xl font-bold">
-    NO. applicant :<span class="font-bold tracking-wide">{{
-      committeeApplicants.length
-    }}</span>
+  <p class="text-center text-white text-2xl font-bold py-4">
+    NO. applicant :{{ committeeApplicants.length }}
   </p>
-  <div class="flex flex-col gap-px">
+  <div class="flex flex-col gap-2">
     <div
-      class="border-y text-white flex flex-col gap-1 p-2 w-full"
+      class="border-b relative text-white flex flex-col gap-1 p-2 w-full"
       v-for="i in committeeApplicants"
       :key="i"
     >
-      <p>
-        createdAt :
-        <span class="font-bold tracking-wide">{{ i.createdAt }}</span>
+      <p class="tracking-wider absolute right-0 top-0">
+        {{ i.createdAt.slice(0, -5) }}
       </p>
       <p>
         Name :
@@ -54,19 +51,15 @@
         <span class="font-bold tracking-wide">{{ i.experience }}</span>
       </p>
 
-      <div>
+      <div class="flex flex-col gap-2">
         <div
           v-for="(answer, question, index) in i.committeeAnswers"
           :key="question"
         >
-          <div>
-            <p class="font-bold tracking-wide">
-              {{ index + 1 }} {{ question }}
-            </p>
-            <p>
-              {{ answer }}
-            </p>
-          </div>
+          <p>{{ index + 1 }} {{ question }}</p>
+          <p class="font-bold tracking-wide">
+            {{ answer }}
+          </p>
         </div>
       </div>
     </div>

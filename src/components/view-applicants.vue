@@ -6,12 +6,12 @@
     />
 
     <div v-else-if="!committee">
-      <p class="text-center text-white text-2xl font-bold">
+      <p class="text-center text-white text-2xl font-bold py-4">
         NO. applicants : {{ applicants.length }}
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <button
-          class="text-[#00246d] border bg-blue-300 flex flex-col gap-2 items-center"
+          class="text-[#00246d] bg-blue-300 flex flex-col gap-2 items-center"
           v-for="(com, i) in committees"
           :key="com"
           @click="$router.push('/view/' + i)"
