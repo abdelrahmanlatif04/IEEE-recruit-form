@@ -141,7 +141,7 @@ export default {
           this.msg = response.data.message;
           setTimeout(() => {
             location.reload();
-          }, 2500);
+          }, 1250);
         })
         .catch((error) => {
           console.error(error);
