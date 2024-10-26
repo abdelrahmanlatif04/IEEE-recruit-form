@@ -116,8 +116,7 @@ export default {
 
   methods: {
     move() {
-      // if (this.validate)
-      this.$emit("forward");
+      if (this.validate) this.$emit("forward");
     },
   },
 
