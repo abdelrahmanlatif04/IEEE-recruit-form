@@ -75,30 +75,6 @@ export default {
         this.general = res["IEEE"]["main"];
         this.team = res["IEEE"]["aswan"];
       });
-
-    const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
-    const url =
-      "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
-
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "x-api-key": apiKey,
-        "Content-Type": "application/json", // Adjust based on the API's requirement
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json(); // or response.text() for plain text
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
   },
 };
 </script>
