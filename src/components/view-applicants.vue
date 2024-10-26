@@ -7,7 +7,7 @@
 
     <div v-else-if="!committee">
       <p class="text-center text-white text-2xl font-bold">
-        NO. applicants : {{ applicants.length }}
+        NO. applicants : {{ applicants }}
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <button
@@ -67,7 +67,7 @@ export default {
           return response.json();
         })
         .then((data) => {
-          this.applicants = data["data"]["applicaitons"];
+          this.applicants = data;
         })
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
