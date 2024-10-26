@@ -81,6 +81,7 @@
 
 <script>
 import { useRegisterStore } from "../../stores/register";
+import axios from "axios";
 
 export default {
   data() {
@@ -119,7 +120,31 @@ export default {
     },
     submit() {
       this.saveAnswers();
-      this.msg = useRegisterStore().submitForm();
+
+      let date = new Date();
+      useRegisterStore().user.createdAt = date;
+
+      axios
+        .post(
+          "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
+          useRegisterStore().user,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": "your_MangaMan_APIKEY_Wherever_You_Keep_It",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response.data);
+          this.msg = response.data.message;
+          console.log(this.msg);
+        })
+        .catch((error) => {
+          console.error(error);
+          this.msg = error.response.data.message;
+          console.log(this.msg);
+        });
     },
   },
 };

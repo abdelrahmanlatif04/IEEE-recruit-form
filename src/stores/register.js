@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import axios from "axios";
 export const useRegisterStore = defineStore("register", {
   state: () => ({
     msg: null,
@@ -28,28 +27,6 @@ export const useRegisterStore = defineStore("register", {
       for (let i in this.user) {
         this.user[i] = null;
       }
-    },
-
-    submitForm() {
-      let date = new Date();
-      this.user.createdAt = date;
-      axios
-        .post(
-          "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
-          this.user,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": "your_MangaMan_APIKEY_Wherever_You_Keep_It",
-            },
-          }
-        )
-        .then((response) => {
-          return response.data.message;
-        })
-        .catch((error) => {
-          return error.response.data.message;
-        });
     },
   },
 });
