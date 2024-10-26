@@ -12,7 +12,6 @@ export default {
     axios
       .get(
         "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
-        useRegisterStore().user,
         {
           headers: {
             "x-api-key": "your_MangaMan_APIKEY_Wherever_You_Keep_It",
