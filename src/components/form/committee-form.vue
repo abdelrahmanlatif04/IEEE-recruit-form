@@ -62,6 +62,7 @@
     </p>
     <div class="flex flex-col justify-center items-center gap-2">
       <button
+        :disabled="isDisabled"
         type="button"
         @click="submit"
         class="bg-blue-700 text-white px-2 py-1 rounded-lg text-2xl border-2 border-white hover:bg-white transition-all duration-300 font-semibold tracking-wide hover:bg-transparent hover:text-blue-700 hover:tracking-widest"
@@ -90,6 +91,7 @@ export default {
       space: null,
       opt: null,
       msg: null,
+      isDisabled: false,
     };
   },
   watch: {
@@ -111,7 +113,6 @@ export default {
     },
     saveAnswers() {
       let answers = {};
-      let c = 0;
       for (let i = 0; i < this.questions.length; i++) {
         answers[this.questions[i].state] =
           !i && this.opt ? this.opt : document.forms[0][i].value;
@@ -123,7 +124,7 @@ export default {
 
       let date = new Date();
       useRegisterStore().user.createdAt = date;
-
+      this.isDisabled = !this.isDisabled;
       axios
         .post(
           "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
@@ -145,6 +146,7 @@ export default {
         .catch((error) => {
           console.error(error);
           this.msg = error.response.data.message;
+          this.isDisabled = !this.isDisabled;
         });
     },
   },
