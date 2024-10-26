@@ -1,60 +1,68 @@
 <template>
   <p class="text-center text-white text-2xl font-bold">
-    NO. applicant : {{ committeeApplicants.length }}
+    NO. applicant :<span class="font-bold tracking-wide">{{
+      committeeApplicants.length
+    }}</span>
   </p>
   <div class="flex flex-col gap-px">
     <div
-      class="border text-white flex flex-col gap-1 p-2 w-fit whitespace-nowrap"
+      class="border-y text-white flex flex-col gap-1 p-2 w-full"
       v-for="i in committeeApplicants"
       :key="i"
     >
       <p>
         createdAt :
-        {{ i.createdAt }}
+        <span class="font-bold tracking-wide">{{ i.createdAt }}</span>
       </p>
       <p>
         Name :
-        {{ i.name }}
+        <span class="font-bold tracking-wide">{{ i.name }}</span>
       </p>
       <p>
         Email :
-        {{ i.email }}
+        <span class="font-bold tracking-wide">{{ i.email }}</span>
       </p>
       <p>
         ID :
-        {{ i.id }}
+        <span class="font-bold tracking-wide">{{ i.id }}</span>
       </p>
       <p>
         Phone :
-        {{ i.tel }}
+        <span class="font-bold tracking-wide">{{ i.tel }}</span>
       </p>
       <p>
         University :
-        {{ i.university }}
+        <span class="font-bold tracking-wide">{{ i.university }}</span>
       </p>
       <p>
         Faculty :
-        {{ i.faculty }}
+        <span class="font-bold tracking-wide">{{ i.faculty }}</span>
       </p>
 
       <p>
         Grade :
-        {{ i.year }}
+        <span class="font-bold tracking-wide">{{ i.year }}</span>
       </p>
 
       <p>
         How did u hear about us :
-        {{ i.howDidUHear }}
+        <span class="font-bold tracking-wide">{{ i.howDidUHear }}</span>
       </p>
 
       <p>
         experience :
-        {{ i.experience }}
+        <span class="font-bold tracking-wide">{{ i.experience }}</span>
       </p>
 
       <div>
-        <div v-for="(question, answer) in i.committeeAnswers" :key="question">
-          <p>{{ question }} : {{ answer }}</p>
+        <div
+          v-for="(answer, question, index) in i.committeeAnswers"
+          :key="question"
+        >
+          <p>
+            0<span class="font-bold tracking-wide">{{ index }}</span
+            >-{{ question }} :{{ answer }}
+          </p>
         </div>
       </div>
     </div>
