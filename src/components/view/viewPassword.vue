@@ -10,7 +10,7 @@
       <input
         class="text-black px-2 py-1 w-4/5 tracking-widest focus:outline-none shadow-md rounded-xl border"
         type="password"
-        v-model="asd"
+        v-model="password"
       />
       <button
         class="border-[3px] rounded-lg w-1/2 text-xl px-4 border-blue-600 text-white bg-blue-600 py-1 hover:text-blue-500 hover:bg-white font-semibold transition-all duration-300"
@@ -29,13 +29,19 @@
 export default {
   data() {
     return {
-      asd: null,
+      password: null,
       state: null,
     };
   },
+
+  created() {
+    this.password = localStorage.getItem("password");
+    this.submit();
+  },
   methods: {
     submit() {
-      if (this.asd == "IeeE@ppliCants!V1ew#2024") {
+      if (this.password == "IeeE@ppliCants!V1ew#2024") {
+        localStorage.setItem("password",this.password)
         this.$emit("openCommittee");
       } else {
         this.state = "Wrong password";
