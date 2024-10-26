@@ -3,15 +3,15 @@
     class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
     <div
-      class="mx-auto w-[316px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative"
+      :class="`mx-auto w-[${width}px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative`"
     >
       <div
         class="flex transition-transform duration-300"
         :style="{
           transform:
             currentSlide > 0
-              ? `translateX(-${currentSlide * 316}px)`
-              : `translateX(${-currentSlide * 316}px)`,
+              ? `translateX(-${currentSlide * width}px)`
+              : `translateX(${-currentSlide * width}px)`,
         }"
       >
         <committee-link
@@ -55,6 +55,7 @@ export default {
       committees: null,
       currentSlide: 0,
       int: null,
+      width: 316,
     };
   },
 
