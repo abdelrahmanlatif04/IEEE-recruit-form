@@ -47,7 +47,7 @@ export default {
         }
       )
       .then((response) => {
-        this.committeeApplicants = response["data"]["applications"];
+        this.committeeApplicants = response["data"];
       })
       .catch((error) => {
         console.error(error);
