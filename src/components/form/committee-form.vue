@@ -119,7 +119,9 @@ export default {
     },
     submit() {
       this.saveAnswers();
-      useRegisterStore().submitForm();
+      setTimeout(() => {
+        useRegisterStore().submitForm();
+      }, 0);
       this.msg = useRegisterStore().msg;
     },
   },
