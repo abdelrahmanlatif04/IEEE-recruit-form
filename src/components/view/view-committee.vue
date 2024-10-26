@@ -1,6 +1,13 @@
 <template>
-  <div class="flex flex-col gap-1">
-    <div v-for="i in committeeApplicants" :key="i">
+  <p class="text-center text-white text-2xl font-bold">
+    NO. applicant : {{ committeeApplicants.length }}
+  </p>
+  <div class="flex flex-wrap gap-1">
+    <div
+      class="border text-white flex flex-col gap-1 p-2 w-fit whitespace-nowrap"
+      v-for="i in committeeApplicants"
+      :key="i"
+    >
       <p>
         Name :
         {{ i.name }}

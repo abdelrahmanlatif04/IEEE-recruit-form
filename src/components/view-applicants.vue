@@ -5,26 +5,28 @@
       @openCommittee="authorized = !authorized"
     />
 
-    <div
-      v-else-if="!committee"
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
-    >
-      <button
-        class="text-[#00246d] border bg-blue-300 flex flex-col gap-2 items-center"
-        v-for="(com, i) in committees"
-        :key="com"
-        @click="$router.push('/view/' + i)"
-      >
-        <img
-          :src="'/committees/' + i + '.png'"
-          class="w-1/2 aspect-square object-contain mx-auto"
-        />
-        <p>
-          {{ com.name }}
-        </p>
-      </button>
+    <div v-else-if="!committee">
+      <p class="text-center text-white text-2xl font-bold">
+        NO. applicants : {{ applicants.length }}
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <button
+          class="text-[#00246d] border bg-blue-300 flex flex-col gap-2 items-center"
+          v-for="(com, i) in committees"
+          :key="com"
+          @click="$router.push('/view/' + i)"
+        >
+          <img
+            :src="'/committees/' + i + '.png'"
+            class="w-1/2 aspect-square object-contain mx-auto"
+          />
+          <p>
+            {{ com.name }}
+          </p>
+        </button>
+      </div>
     </div>
-    <view-committee :committee="committee"  v-else />
+    <view-committee :committee="committee" v-else />
   </div>
 </template>
 
@@ -36,12 +38,14 @@ export default {
     return {
       authorized: false,
       committees: null,
+      applicants: [],
     };
   },
   created() {
     fetch("/data.json")
       .then((res) => res.json())
       .then((res) => (this.committees = res["committees"]));
+    this.getAllApplicants();
   },
   methods: {
     getAllApplicants() {
@@ -63,7 +67,7 @@ export default {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
+          this.applicants = data["data"]["applicaitons"];
         })
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
