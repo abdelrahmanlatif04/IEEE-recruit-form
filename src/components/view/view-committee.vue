@@ -2,20 +2,31 @@
   <p class="text-center text-white text-2xl font-bold">
     NO. applicant : {{ committeeApplicants.length }}
   </p>
-  <div class="flex flex-wrap gap-1">
+  <div class="flex flex-col gap-px">
     <div
       class="border text-white flex flex-col gap-1 p-2 w-fit whitespace-nowrap"
       v-for="i in committeeApplicants"
       :key="i"
     >
       <p>
+        createdAt :
+        {{ i.createdAt }}
+      </p>
+      <p>
         Name :
         {{ i.name }}
       </p>
-
       <p>
         Email :
         {{ i.email }}
+      </p>
+      <p>
+        ID :
+        {{ i.id }}
+      </p>
+      <p>
+        Phone :
+        {{ i.tel }}
       </p>
       <p>
         University :
@@ -30,6 +41,22 @@
         Grade :
         {{ i.year }}
       </p>
+
+      <p>
+        How did u hear about us :
+        {{ i.howDidUHear }}
+      </p>
+
+      <p>
+        experience :
+        {{ i.experience }}
+      </p>
+
+      <div>
+        <div v-for="(question, answer) in i.committeeAnswers" :key="question">
+          <p>{{ question }} : {{ answer }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
