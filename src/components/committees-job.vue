@@ -3,10 +3,10 @@
     class="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   >
     <div
-      :class="`mx-auto w-[${width}px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative`"
+      :class="`shadow flex w-[${width}px] aspect-video bg-[url('./bg.jpg')] rounded-lg overflow-hidden relative`"
     >
       <div
-        class="flex transition-transform duration-300"
+        class="flex transition-transform h-full duration-300"
         :style="{
           transform:
             currentSlide > 0
@@ -15,10 +15,10 @@
         }"
       >
         <committee-link
-          v-for="(committee, i, index) in committees"
+          v-for="(committee, i) in committees"
           :key="i"
           :i="i"
-          :index="index"
+          :width="width"
           :committee="committee"
         />
       </div>
@@ -55,10 +55,12 @@ export default {
       committees: null,
       currentSlide: 0,
       int: null,
-      width: 316,
+      width: 400,
     };
   },
-
+  created() {
+    console.log(home);
+  },
   methods: {
     slideLeft() {
       clearInterval(this.int);

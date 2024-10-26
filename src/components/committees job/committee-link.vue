@@ -1,18 +1,18 @@
 <template>
   <div
-    class="w-[300px] bg-cover bg-no-repeat rounded-lg mx-2 flex-shrink-0 hover:opacity-60 transition-all duration-300"
+    :class="`rounded-lg w-[400px] flex-shrink-0 hover:opacity-60 transition-all duration-300`"
   >
     <router-link
       :to="`/committee/${i}`"
       :key="committee"
-      class="flex flex-col h-full justify-between p-2 gap-10"
+      class="flex flex-col h-full justify-around"
     >
       <img
         :src="`committees/${i}.png`"
-        class="w-4/12 mx-auto aspect-square object-contain"
+        class="w-5/12 mx-auto aspect-square object-contain"
       />
       <p class="text-center text-[#00246d] font-semibold tracking-wide">
-        0{{ index + 1 }} {{ committee.name }}
+        {{ committee.name }}
       </p>
     </router-link>
   </div>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  props: ["committee", "i", "index"],
+  props: ["committee", "i", "width"],
 };
 </script>
 
