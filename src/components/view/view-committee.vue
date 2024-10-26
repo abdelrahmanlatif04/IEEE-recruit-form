@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-center text-white text-2xl font-bold py-4">
-      NO. applicant :{{ committeeApplicants.length }}
+      NO. applicant : {{ committeeApplicants.length }}
     </p>
     <div class="flex flex-col gap-2">
       <div
