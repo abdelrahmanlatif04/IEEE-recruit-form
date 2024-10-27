@@ -48,7 +48,7 @@
         </p>
 
         <p>
-          experience :
+          Experience :
           <span class="font-bold tracking-wide">{{ i.experience }}</span>
         </p>
 
@@ -63,6 +63,11 @@
             </p>
           </div>
         </div>
+
+        <p>
+          Space :
+          <span class="font-bold tracking-wide">{{ i.space }}</span>
+        </p>
       </div>
     </div>
 
