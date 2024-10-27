@@ -125,17 +125,17 @@ export default {
       let date = new Date();
       useRegisterStore().user.createdAt = date;
       this.isDisabled = !this.isDisabled;
+      const url =
+        "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
+      const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
+      
       axios
-        .post(
-          "https://ieee-recruitment-production.up.railway.app/api/v1/boody",
-          useRegisterStore().user,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": "your_MangaMan_APIKEY_Wherever_You_Keep_It",
-            },
-          }
-        )
+        .post(url, useRegisterStore().user, {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": apiKey,
+          },
+        })
         .then((response) => {
           console.log(response.data);
           this.msg = response.data.message;

@@ -52,25 +52,18 @@ export default {
       const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
       const url =
         "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
-
-      fetch(url, {
-        method: "GET",
-        headers: {
-          "x-api-key": apiKey,
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
+      axios
+        .get(url, {
+          headers: {
+            "x-api-key": apiKey,
+            "Content-Type": "application/json",
+          },
         })
-        .then((data) => {
-          this.applicants = data["applicaitons"];
+        .then((response) => {
+          this.applicants = response.data.applications;
         })
         .catch((error) => {
-          console.error("There was a problem with the fetch operation:", error);
+          console.error("There was a problem with the axios operation:", error);
         });
     },
   },

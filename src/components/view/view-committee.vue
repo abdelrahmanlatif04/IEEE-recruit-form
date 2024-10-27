@@ -83,27 +83,31 @@ export default {
       committeeApplicants: null,
     };
   },
-  mounted() {
-    axios
-      .get(
-        "https://ieee-recruitment-production.up.railway.app/api/v1/boody/" +
-          this.committee,
-        {
+
+  methods: {
+    getData() {
+      const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
+      const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${this.committee}`;
+      axios
+        .get(url, {
           headers: {
-            "x-api-key": "your_MangaMan_APIKEY_Wherever_You_Keep_It",
+            "x-api-key": apiKey,
           },
-        }
-      )
-      .then((response) => {
-        if (response["data"]["applicaitons"]) {
-          this.committeeApplicants = response["data"]["applicaitons"];
-        } else {
-          this.$router.push("/view");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+        })
+        .then((response) => {
+          if (response["data"]["applicaitons"]) {
+            this.committeeApplicants = response["data"]["applicaitons"];
+          } else {
+            this.$router.push("/view");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+  },
+  mounted() {
+    this.getData();
   },
   props: ["committee"],
 };
