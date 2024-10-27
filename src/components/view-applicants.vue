@@ -87,7 +87,7 @@ export default {
     getCommitteeApplicantsNumber() {
       const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
 
-      for (i in this.numbers) {
+      for (let i in this.numbers) {
         const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${i}`;
         axios
           .get(url, {
