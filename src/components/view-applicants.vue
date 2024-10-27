@@ -25,7 +25,7 @@
           </div>
 
           <span
-            class="font-bold text-green-500 tracking-wide absolute right-2 top-2"
+            class="font-bold text-2xl text-[#00246d] absolute right-2 top-2"
           >
             {{ numbers[i] }}
           </span>
