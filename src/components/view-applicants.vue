@@ -53,6 +53,7 @@ export default {
       const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
       const url =
         "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
+
       axios
         .get(url, {
           headers: {
@@ -61,7 +62,7 @@ export default {
           },
         })
         .then((response) => {
-          this.applicants = response.data.applications;
+          this.applicants = response['data']['applications'];
         })
         .catch((error) => {
           console.error("There was a problem with the axios operation:", error);
