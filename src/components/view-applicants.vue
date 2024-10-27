@@ -33,6 +33,7 @@
 <script>
 import viewPassword from "./view/viewPassword.vue";
 import viewCommittee from "./view/view-committee.vue";
+import axios from "axios";
 export default {
   data() {
     return {
