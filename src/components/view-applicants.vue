@@ -33,7 +33,6 @@
 <script>
 import viewPassword from "./view/viewPassword.vue";
 import viewCommittee from "./view/view-committee.vue";
-import axios from "axios";
 export default {
   data() {
     return {
@@ -54,18 +53,22 @@ export default {
       const url =
         "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
 
-      axios
-        .get(url, {
-          headers: {
-            "x-api-key": apiKey,
-            "Content-Type": "application/json",
-          },
-        })
+      fetch(url, {
+        headers: {
+          "x-api-key": apiKey,
+        },
+      })
         .then((response) => {
-          this.applicants = response["applications"];
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          this.applicants = data["applicaitons"];
         })
         .catch((error) => {
-          console.error("There was a problem with the axios operation:", error);
+          console.error("There was a problem with the fetch operation:", error);
         });
     },
   },
