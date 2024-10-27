@@ -101,7 +101,7 @@ export default {
           this.$router.push("/view");
         }
       })
-      .then.catch((error) => {
+      .catch((error) => {
         console.error(error);
       });
   },
