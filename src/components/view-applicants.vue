@@ -22,11 +22,11 @@
           />
           <div>
             {{ com.name }}
-            <span class="font-bold tracking-wide">
-              {{ getCommitteeApplicantsNumber(i) }}
-            </span>
-
           </div>
+
+          <span class="font-bold tracking-wide absolute right-3 top-3">
+            {{ getCommitteeApplicantsNumber(i) }}
+          </span>
         </button>
       </div>
     </div>
