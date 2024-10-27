@@ -81,7 +81,7 @@ export default {
           },
         })
         .then((response) => {
-          return response["data"]["applicaitons"].length;
+          return response["data"]["applicaitons"];
         })
         .catch((error) => {
           console.error(error);
