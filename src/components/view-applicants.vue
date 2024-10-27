@@ -20,12 +20,14 @@
             :src="'/committees/' + i + '.png'"
             class="w-1/2 aspect-square object-contain mx-auto"
           />
-          <div>
+          <div class="text-xl tracking-wider">
             {{ com.name }}
           </div>
 
-          <span class="font-bold tracking-wide absolute right-3 top-3">
-            {{ getCommitteeApplicantsNumber(i) }}
+          <span
+            class="font-bold text-green-500 tracking-wide absolute right-2 top-2"
+          >
+            {{ numbers[i] }}
           </span>
         </button>
       </div>
@@ -38,13 +40,22 @@
 import viewPassword from "./view/viewPassword.vue";
 import viewCommittee from "./view/view-committee.vue";
 import axios from "axios";
-
 export default {
   data() {
     return {
       authorized: false,
       committees: null,
       applicants: [],
+
+      numbers: {
+        sm: null,
+        pr: null,
+        hr: null,
+        fr: null,
+        web: null,
+        multimedia: null,
+        campus: null,
+      },
     };
   },
   created() {
@@ -52,6 +63,8 @@ export default {
       .then((res) => res.json())
       .then((res) => (this.committees = res["committees"]));
     this.getAllApplicants();
+
+    this.getCommitteeApplicantsNumber();
   },
   methods: {
     getAllApplicants() {
@@ -71,21 +84,24 @@ export default {
           console.error("There was a problem with the Axios request:", error);
         });
     },
-    getCommitteeApplicantsNumber(committee) {
+    getCommitteeApplicantsNumber() {
       const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
-      const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${committee}`;
-      axios
-        .get(url, {
-          headers: {
-            "x-api-key": apiKey,
-          },
-        })
-        .then((response) => {
-          return response["data"]["applicaitons"];
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+
+      for (i in this.numbers) {
+        const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${i}`;
+        axios
+          .get(url, {
+            headers: {
+              "x-api-key": apiKey,
+            },
+          })
+          .then((response) => {
+            this.numbers[i] = response["data"]["applicaitons"].length;
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
     },
   },
   components: {
