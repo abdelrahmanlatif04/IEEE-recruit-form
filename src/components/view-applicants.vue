@@ -33,7 +33,6 @@
 <script>
 import viewPassword from "./view/viewPassword.vue";
 import viewCommittee from "./view/view-committee.vue";
-import axios from "axios";
 export default {
   data() {
     return {
@@ -54,7 +53,9 @@ export default {
       const url =
         "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
 
-      axios
+
+
+         axios
         .get(url, {
           headers: {
             "x-api-key": apiKey,
@@ -62,7 +63,7 @@ export default {
           },
         })
         .then((response) => {
-          this.applicants = response['data']['applications'];
+          this.applicants = response['applications'];
         })
         .catch((error) => {
           console.error("There was a problem with the axios operation:", error);
