@@ -95,9 +95,13 @@ export default {
         }
       )
       .then((response) => {
-        this.committeeApplicants = response["data"]["applicaitons"];
+        if (response["data"]["applicaitons"]) {
+          this.committeeApplicants = response["data"]["applicaitons"];
+        } else {
+          this.$router.push("/view");
+        }
       })
-      .catch((error) => {
+      .then.catch((error) => {
         console.error(error);
       });
   },
