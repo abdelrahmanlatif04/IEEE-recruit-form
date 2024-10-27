@@ -11,7 +11,7 @@
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <button
-          class="text-[#00246d] hover:opacity-60 transition-opacity duration-300 bg-blue-300 flex flex-col gap-2 items-center rounded-lg"
+          class="text-[#00246d] hover:opacity-60 relative transition-opacity duration-300 bg-blue-300 flex flex-col gap-2 items-center rounded-lg"
           v-for="(com, i) in committees"
           :key="com"
           @click="$router.push('/view/' + i)"
@@ -20,9 +20,13 @@
             :src="'/committees/' + i + '.png'"
             class="w-1/2 aspect-square object-contain mx-auto"
           />
-          <p>
+          <div>
             {{ com.name }}
-          </p>
+            <span class="font-bold tracking-wide">
+              {{ getCommitteeApplicantsNumber(i) }}
+            </span>
+
+          </div>
         </button>
       </div>
     </div>
@@ -54,7 +58,6 @@ export default {
       const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
       const url =
         "https://ieee-recruitment-production.up.railway.app/api/v1/boody";
-
       axios
         .get(url, {
           headers: {
@@ -66,6 +69,22 @@ export default {
         })
         .catch((error) => {
           console.error("There was a problem with the Axios request:", error);
+        });
+    },
+    getCommitteeApplicantsNumber(committee) {
+      const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
+      const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${committee}`;
+      axios
+        .get(url, {
+          headers: {
+            "x-api-key": apiKey,
+          },
+        })
+        .then((response) => {
+          return response["data"]["applicaitons"].length;
+        })
+        .catch((error) => {
+          console.error(error);
         });
     },
   },
