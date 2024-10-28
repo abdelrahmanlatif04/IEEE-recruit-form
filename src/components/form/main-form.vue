@@ -87,7 +87,7 @@
         class="shadow-md focus:outline-none text-lg px-2 py-px tracking-wide rounded-md w-11/12 mx-auto"
         type="text"
         placeholder="في حضن بابا و ماما"
-        v-if="university == 'other'"
+        v-if="university === 'other'"
         v-model="otherUni"
       />
 
@@ -182,15 +182,14 @@ export default {
   computed: {
     validate() {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      const idRegex = /^[23]\d{13}$/;
       const phoneRegex =
         /^(\+2011|2011|011|\+2012|2012|012|\+2010|2010|010|\+2015|2015|015)\d{8}$/;
 
       this.validation.name = this.name ? true : false;
       this.validation.email = emailRegex.test(this.email);
-      this.validation.id = idRegex.test(this.id);
+      this.validation.id = this.id ? true : false;
       this.validation.tel = phoneRegex.test(this.tel);
-      if (this.university == "other") {
+      if (this.university === "other") {
         this.validation.university = this.otherUni ? true : false;
       } else if (this.university) {
         this.validation.university = this.university ? true : false;
@@ -199,14 +198,12 @@ export default {
       }
       this.validation.faculty = this.faculty ? true : false;
       this.validation.year = this.year ? true : false;
-
       for (let i in this.validation) {
         if (!this.validation[i]) {
           window.scrollTo({ top: 0, behavior: "smooth" });
           return false;
         }
       }
-
       return true;
     },
   },
