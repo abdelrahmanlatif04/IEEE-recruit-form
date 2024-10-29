@@ -7,7 +7,7 @@
 
 <script>
 import contacts from "./components/contacts.vue";
-
+import viewApplicants from "./components/view-applicants.vue";
 export default {
   components: {
     contacts,

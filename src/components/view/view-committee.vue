@@ -3,72 +3,12 @@
     <p class="text-center text-white text-2xl font-bold py-4">
       NO. applicant : {{ committeeApplicants.length }}
     </p>
-    <div class="flex flex-col gap-2">
-      <div
-        class="border-b relative text-white flex flex-col gap-1 p-2 w-full"
+    <div class="flex flex-col gap-2 flex-wrap">
+      <view-applicant
         v-for="i in committeeApplicants"
         :key="i"
-      >
-        <p class="tracking-wider absolute right-0 top-0">
-          {{ i.createdAt.slice(0, -5) }}
-        </p>
-        <p>
-          Name :
-          <span class="font-bold tracking-wide">{{ i.name }}</span>
-        </p>
-        <p>
-          Email :
-          <span class="font-bold tracking-wide">{{ i.email }}</span>
-        </p>
-        <p>
-          ID :
-          <span class="font-bold tracking-wide">{{ i.id }}</span>
-        </p>
-        <p>
-          Phone :
-          <span class="font-bold tracking-wide">{{ i.tel }}</span>
-        </p>
-        <p>
-          University :
-          <span class="font-bold tracking-wide">{{ i.university }}</span>
-        </p>
-        <p>
-          Faculty :
-          <span class="font-bold tracking-wide">{{ i.faculty }}</span>
-        </p>
-
-        <p>
-          Grade :
-          <span class="font-bold tracking-wide">{{ i.year }}</span>
-        </p>
-
-        <p>
-          How did u hear about us :
-          <span class="font-bold tracking-wide">{{ i.howDidUHear }}</span>
-        </p>
-
-        <p>
-          Experience :
-          <span class="font-bold tracking-wide">{{ i.experience }}</span>
-        </p>
-
-        <div class="flex flex-col gap-2">
-          <div
-            v-for="(answer, question, index) in i.committeeAnswers"
-            :key="question"
-          >
-            <p>{{ index + 1 }} {{ question }}</p>
-            <p class="font-bold tracking-wide">
-              {{ answer }}
-            </p>
-          </div>
-        </div>
-
-        <p>
-          Space :
-          <span class="font-bold tracking-wide">{{ i.space }}</span>
-        </p>
-      </div>
+        :applicant="i"
+      />
     </div>
 
     <button
@@ -82,6 +22,8 @@
 
 <script>
 import axios from "axios";
+import viewApplicant from "./view-applicant.vue";
+
 export default {
   data() {
     return {
@@ -113,6 +55,10 @@ export default {
   },
   mounted() {
     this.getData();
+  },
+
+  components: {
+    viewApplicant,
   },
   props: ["committee"],
 };
