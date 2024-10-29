@@ -3,7 +3,7 @@
     <p class="text-center text-white text-2xl font-bold py-4">
       NO. applicant : {{ committeeApplicants.length }}
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <view-applicant
         v-for="i in committeeApplicants"
         :key="i"

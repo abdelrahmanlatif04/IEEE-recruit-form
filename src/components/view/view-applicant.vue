@@ -1,8 +1,10 @@
 <template>
   <div
-    class="max-w-sm p-6 relative bg-white shadow-lg rounded-lg overflow-hidden"
+    class="max-w-sm p-6 mx-auto relative bg-white shadow-lg rounded-lg overflow-hidden"
   >
-    <h2 class="text-xl font-semibold text-gray-800">{{ applicant.name }}</h2>
+    <h2 class="text-xl font-semibold text-gray-800 text-center">
+      {{ applicant.name }}
+    </h2>
     <p v-if="applicant.email" class="text-gray-600 mt-2">
       <strong>Email:</strong> {{ applicant.email }}
     </p>
