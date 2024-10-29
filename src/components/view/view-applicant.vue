@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-sm p-6 relative mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
+    class="max-w-sm p-6 relative bg-white shadow-lg rounded-lg overflow-hidden"
   >
     <h2 class="text-xl font-semibold text-gray-800">{{ applicant.name }}</h2>
     <p v-if="applicant.email" class="text-gray-600 mt-2">
@@ -39,7 +39,7 @@
     <p v-if="applicant.space" class="text-gray-600 mt-2">
       <strong>Space:</strong> {{ applicant.space }}
     </p>
-    <p class="text-gray-600 mt-2 absolute right-2 top-2">
+    <p class="text-gray-600 absolute left-1/2 -translate-x-1/2 top-0">
       {{ applicant.createdAt }}
     </p>
   </div>
