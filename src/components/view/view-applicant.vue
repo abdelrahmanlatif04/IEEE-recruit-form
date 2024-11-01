@@ -47,7 +47,9 @@
     <p v-if="applicant.space" class="text-gray-600 mt-2">
       <strong>Space:</strong> {{ applicant.space }}
     </p>
-    <p class="text-gray-600 absolute left-1/2 -translate-x-1/2 top-0">
+    <p
+      class="text-gray-600 absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap"
+    >
       {{ applicant.createdAt }}
     </p>
   </div>
