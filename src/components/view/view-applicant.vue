@@ -39,8 +39,8 @@
       <strong>Committee Answers:</strong>
       <div v-for="(answer, i) in applicant.committeeAnswers" :key="answer">
         <div v-if="answer">
-          <p class="font-semibold">{{ i }}:</p>
-          <p>{{ answer }}</p>
+          <span class="font-semibold">{{ i }}:</span>
+          <span>{{ answer }}</span>
         </div>
       </div>
     </div>
