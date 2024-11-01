@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-sm p-6 mx-auto relative bg-white shadow-lg rounded-lg overflow-hidden"
+    class="max-w-sm min-w- p-6 mx-auto my-auto relative bg-white shadow-lg rounded-lg overflow-hidden"
   >
     <h2 class="text-xl font-semibold text-gray-800 text-center">
       {{ applicant.name }}
@@ -35,9 +35,15 @@
     <p v-if="applicant.committee" class="text-gray-600 mt-2">
       <strong>Committee:</strong> {{ applicant.committee }}
     </p>
-    <p v-if="applicant.committeeAnswers" class="text-gray-600 mt-2">
-      <strong>Committee Answers:</strong> {{ applicant.committeeAnswers }}
-    </p>
+    <div v-if="applicant.committeeAnswers" class="text-gray-600 mt-2">
+      <strong>Committee Answers:</strong>
+      <div v-for="(answer, i) in applicant.committeeAnswers" :key="answer">
+        <div v-if="answer">
+          <p class="font-semibold">{{ i }}:</p>
+          <p>{{ answer }}</p>
+        </div>
+      </div>
+    </div>
     <p v-if="applicant.space" class="text-gray-600 mt-2">
       <strong>Space:</strong> {{ applicant.space }}
     </p>
