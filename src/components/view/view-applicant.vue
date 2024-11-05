@@ -52,6 +52,10 @@
     >
       {{ applicant.createdAt }}
     </p>
+    <div>
+      <button @click="SentResponse(true)">YES</button>
+      <button @click="SentResponse(False)">NO</button>
+    </div>
   </div>
 </template>
 
@@ -63,6 +67,12 @@ export default {
         return {};
       },
     };
+  },
+
+  methods: {
+    SentResponse(response) {
+      console.log(response);
+    },
   },
   props: ["applicant"],
 };
