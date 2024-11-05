@@ -11,7 +11,7 @@
     <div class="text-center text-xl">
       Follow our
       <a
-        href="https://web.facebook.com/3bdellatiif4/"
+        href="https://web.facebook.com/IEEEAswanSB"
         class="text-blue-300 hover:text-white hover:tracking-widest text-2xl font-bold transition-all duration-300 underline underline-offset-2"
         target="_blank"
         rel="noopener noreferrer"
