@@ -1,55 +1,55 @@
 <template>
-  <div
-    class="text-black grid place-content-center w-full h-screen fixed top-0 left-0 bg-black bg-opacity-60"
-  >
-    <form
-      @submit.prevent="submit"
-      class="flex flex-col justify-around items-center rounded-lg bg-white text-black w-96 aspect-square shadow relative"
-    >
-      <label class="text-black text-3xl" for="password">EnterPassword</label>
-      <input
-        class="text-black px-2 py-1 w-4/5 tracking-widest focus:outline-none shadow-md rounded-xl border"
-        type="password"
-        v-model="password"
-      />
-      <button
-        class="border-[3px] rounded-lg w-1/2 text-xl px-4 border-blue-600 text-white bg-blue-600 py-1 hover:text-blue-500 hover:bg-white font-semibold transition-all duration-300"
-        type="submit"
-      >
-        Enter
-      </button>
-      <p class="absolute bottom-2 text-red-500 font-semibold tracking-wider">
-        {{ state }}
-      </p>
-    </form>
-  </div>
+	<div
+		class="text-black grid place-content-center w-full h-screen fixed top-0 left-0 bg-black bg-opacity-60"
+	>
+		<form
+			@submit.prevent="submit"
+			class="flex flex-col justify-around items-center rounded-lg bg-white text-black w-96 aspect-square shadow relative"
+		>
+			<label class="text-black text-3xl" for="password">EnterPassword</label>
+			<input
+				class="text-black px-2 py-1 w-4/5 tracking-widest focus:outline-none shadow-md rounded-xl border"
+				type="password"
+				v-model="password"
+			/>
+			<button
+				class="border-[3px] rounded-lg w-1/2 text-xl px-4 border-blue-600 text-white bg-blue-600 py-1 hover:text-blue-500 hover:bg-white font-semibold transition-all duration-300"
+				type="submit"
+			>
+				Enter
+			</button>
+			<p class="absolute bottom-2 text-red-500 font-semibold tracking-wider">
+				{{ state }}
+			</p>
+		</form>
+	</div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      password: null,
-      state: null,
-    };
-  },
+	data() {
+		return {
+			password: null,
+			state: null,
+		};
+	},
 
-  created() {
-    if (localStorage.getItem("viewPassKey").length > 2) {
-      this.password = localStorage.getItem("viewPassKey");
-      this.submit();
-    }
-  },
-  methods: {
-    submit() {
-      if (this.password == "IeeE@ppliCants!V1ew#2024") {
-        localStorage.setItem("viewPassKey", this.password);
-        this.$emit("openCommittee");
-      } else {
-        this.state = "Wrong password";
-      }
-    },
-  },
+	created() {
+		if (localStorage.getItem("viewPassKey")) {
+			this.password = localStorage.getItem("viewPassKey");
+			this.submit();
+		}
+	},
+	methods: {
+		submit() {
+			if (this.password == "IeeE@ppliCants!V1ew#2024") {
+				localStorage.setItem("viewPassKey", this.password);
+				this.$emit("openCommittee");
+			} else {
+				this.state = "Wrong password";
+			}
+		},
+	},
 };
 </script>
 
