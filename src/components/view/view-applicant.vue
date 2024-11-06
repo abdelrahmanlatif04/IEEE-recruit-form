@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-sm min-w- p-6 mx-auto my-auto relative bg-white shadow-lg rounded-lg overflow-hidden"
+    class="max-w-sm w-[450px] p-6 mx-auto my-auto relative bg-white shadow-lg rounded-lg overflow-hidden"
   >
     <h2 class="text-xl font-semibold text-gray-800 text-center">
       {{ applicant.name }}
@@ -52,29 +52,84 @@
     >
       {{ applicant.createdAt }}
     </p>
-    <div>
-      <button @click="SentResponse(true)">YES</button>
-      <button @click="SentResponse(False)">NO</button>
+    <div class="w-full flex justify-center items-center mt-4 gap-10">
+      <p v-if="isHeadChosen === true" class="text-2xl text-[#1e40af]">
+        Accepted
+      </p>
+      <p v-else-if="isHeadChosen === false" class="text-2xl text-[#1e40af]">
+        Rejected
+      </p>
+      <template v-else>
+        <button
+          title="approve"
+          class="p-2 w-10 h-10 text-white rounded-full bg-green-500 flex justify-center items-center"
+          @click="SentResponse(applicant._id, true)"
+        >
+          <i class="pi pi-check"></i>
+        </button>
+        <button
+          title="reject"
+          class="p-2 w-10 h-10 text-white rounded-full bg-red-500 flex justify-center items-center"
+          @click="SentResponse(applicant._id, false)"
+        >
+          <i class="pi pi-times"></i>
+        </button>
+      </template>
     </div>
+    <a
+      :href="`tel:` + applicant.tel"
+      class="p-2 mt-2 rounded-md bg-[#1e40af] text-white flex justify-center items-center gap-2"
+    >
+      <span>Call</span>
+      <i class="pi pi-phone"></i>
+    </a>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      data() {
-        return {};
-      },
-    };
-  },
+import "primeicons/primeicons.css";
+import axios from "axios";
 
-  methods: {
-    SentResponse(response) {
-      console.log(response);
-    },
-  },
-  props: ["applicant"],
+export default {
+	data() {
+		return {
+			headChosen: false,
+			data() {
+				return {};
+			},
+		};
+	},
+
+	methods: {
+		SentResponse(id, bool) {
+			const apiKey = "your_MangaMan_APIKEY_Wherever_You_Keep_It";
+			const url = `https://ieee-recruitment-production.up.railway.app/api/v1/boody/${id}`;
+			// const url = `http://localhost:9000/api/v1/boody/${id}`;
+			axios
+				.post(
+					url,
+					{ willMove: bool },
+					{
+						headers: {
+							"x-api-key": apiKey,
+						},
+					}
+				)
+				.then((response) => {
+					console.log(response);
+					this.headChosen = true;
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+		},
+	},
+	props: ["applicant"],
+	computed: {
+		isHeadChosen() {
+			return this.applicant.rejected ;
+		},
+	},
 };
 </script>
 
