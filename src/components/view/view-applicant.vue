@@ -54,7 +54,6 @@
 		</p>
 		<div class="w-full flex justify-center items-center mt-4 gap-10">
 			<p v-if="isHeadChosen === true" class="text-2xl text-[#1e40af]">Accepted</p>
-			<p v-else-if="isHeadChosen === false" class="text-2xl text-[#1e40af]">Rejected</p>
 			<template v-else>
 				<button
 					title="approve"
