@@ -52,11 +52,11 @@
     >
       {{ applicant.createdAt }}
     </p>
-    <div class="w-full flex justify-center items-center mt-4 gap-10">
-      <p class="text-2xl text-[#1e40af]">
+    <div class="w-full flex flex-col justify-center items-center mt-4 gap-2">
+      <p class="text-2xl font-bold   text-[#1e40af]">
         {{ applicant.willMoveToPersonalInterview ? "Accepted" : "Rejected" }}
       </p>
-      <div>
+      <div class="flex w-full justify-around">
         <button
           title="approve"
           class="p-2 w-10 h-10 text-white rounded-full bg-green-500 flex justify-center items-center"
