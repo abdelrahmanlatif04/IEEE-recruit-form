@@ -56,7 +56,7 @@
       <p class="text-2xl text-[#1e40af]">
         {{ applicant.willMoveToPersonalInterview ? "Accepted" : "Rejected" }}
       </p>
-      <template>
+      <div>
         <button
           title="approve"
           class="p-2 w-10 h-10 text-white rounded-full bg-green-500 flex justify-center items-center"
@@ -71,7 +71,7 @@
         >
           <i class="pi pi-times"></i>
         </button>
-      </template>
+      </div>
     </div>
     <a
       :href="`tel:` + applicant.tel"
