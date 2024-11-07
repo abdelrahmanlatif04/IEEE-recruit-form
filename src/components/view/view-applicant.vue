@@ -53,13 +53,10 @@
       {{ applicant.createdAt }}
     </p>
     <div class="w-full flex justify-center items-center mt-4 gap-10">
-      <p
-        v-if="applicant.willMoveToPersonalInterview"
-        class="text-2xl text-[#1e40af]"
-      >
-        Accepted
+      <p class="text-2xl text-[#1e40af]">
+        {{ applicant.willMoveToPersonalInterview ? "Accepted" : "Rejected" }}
       </p>
-      <template v-else>
+      <template>
         <button
           title="approve"
           class="p-2 w-10 h-10 text-white rounded-full bg-green-500 flex justify-center items-center"
