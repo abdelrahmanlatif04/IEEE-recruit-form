@@ -53,8 +53,8 @@
       {{ applicant.createdAt }}
     </p>
     <div class="w-full flex flex-col justify-center items-center mt-4 gap-2">
-      <p class="text-2xl font-bold   text-[#1e40af]">
-        {{ applicant.willMoveToPersonalInterview ? "Accepted" : "Rejected" }}
+      <p class="text-2xl font-bold text-[#1e40af]">
+        {{ applicant.willMoveToPersonalInterview ? "Accepted" : " " }}
       </p>
       <div class="flex w-full justify-around">
         <button
