@@ -25,7 +25,7 @@ import FormClosed from "./form/form-closed.vue";
 export default {
   data() {
     return {
-      isFormClosed:false,
+      isFormClosed: true,
       state: 1,
       data: [],
       committee: null,
